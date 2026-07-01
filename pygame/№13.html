@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Строки: индексация, срезы, длина строки</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Строки: индексация, срезы, длина строки</h1>
+            <p class="subtitle">Узнайте, как обращаться к отдельным символам, извлекать части строк и измерять их длину</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: Индексация -->
+            <div class="card">
+                <h2><i class="fas fa-map-pin"></i> Индексация строк</h2>
+                <div class="section">
+                    <p>Каждый символ строки имеет свой <strong>индекс</strong> – порядковый номер, начинающийся с <strong>0</strong>. Индексы можно использовать для получения одного символа.</p>
+                    
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="label">Прямой индекс</div>
+                            <small>s[0], s[1], s[2]…</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-arrow-left"></i>
+                            <div class="label">Отрицательный индекс</div>
+                            <small>s[-1] – последний, s[-2] – предпоследний</small>
+                        </div>
+                    </div>
+
+                    <h3>Пример</h3>
+                    <div class="code-block">
+                        word = <span class="string">"Python"</span><br>
+                        <span class="keyword">print</span>(word[0])   <span class="comment"># P</span><br>
+                        <span class="keyword">print</span>(word[-1])  <span class="comment"># n</span><br>
+                        <span class="keyword">print</span>(word[2])   <span class="comment"># t</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая карточка: Длина строки -->
+            <div class="card">
+                <h2><i class="fas fa-ruler"></i> Длина строки len()</h2>
+                <div class="section">
+                    <p>Функция <code>len()</code> возвращает количество символов в строке.</p>
+
+                    <div class="code-block">
+                        word = <span class="string">"Python"</span><br>
+                        <span class="keyword">print</span>(len(word))  <span class="comment"># 6</span>
+                    </div>
+
+                    <p>Длина нужна, чтобы:</p>
+                    <ul style="padding-left:20px; margin:10px 0;">
+                        <li>Определить последний индекс</li>
+                        <li>Проверить, не пустая ли строка</li>
+                        <li>Ограничить перебор в цикле</li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <p><strong>Важно:</strong> последний индекс строки = <code>len(s) - 1</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Срезы -->
+        <div class="card">
+            <h2><i class="fas fa-cut"></i> Срезы строк</h2>
+            <div class="section">
+                <p><strong>Срез</strong> позволяет извлечь часть строки. Синтаксис: <code>строка[начало:конец:шаг]</code>.</p>
+
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-play"></i> Параметры среза</h4>
+                        <ul style="margin:0; padding-left:18px;">
+                            <li><code>start</code> – начальный индекс (включительно)</li>
+                            <li><code>stop</code> – конечный индекс (не включается)</li>
+                            <li><code>step</code> – шаг (по умолчанию 1)</li>
+                        </ul>
+                        <p style="margin-top:10px;">Если что-то не указано, берутся крайние значения (0, длина, 1).</p>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-lightbulb"></i> Примеры срезов</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            s = <span class="string">"Hello World"</span><br>
+                            s[0:5]    <span class="comment"># Hello</span><br>
+                            s[6:]     <span class="comment"># World</span><br>
+                            s[:5]     <span class="comment"># Hello</span><br>
+                            s[::2]    <span class="comment"># HloWrd</span><br>
+                            s[::-1]   <span class="comment"># dlroW olleH (переворот)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Первый и последний символ</h3>
+                <p>Запросите строку и выведите её первый и последний символ.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    s = <span class="keyword">input</span>(<span class="string">"Введите строку: "</span>)<br>
+                    <span class="keyword">print</span>(<span class="string">"Первый символ:"</span>, s[0])<br>
+                    <span class="keyword">print</span>(<span class="string">"Последний символ:"</span>, s[-1])
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Извлечение середины</h3>
+                <p>Дана строка. Если её длина чётная, выведите два центральных символа; если нечётная — один центральный.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    s = <span class="keyword">input</span>(<span class="string">"Введите строку: "</span>)<br>
+                    n = len(s)<br>
+                    <span class="keyword">if</span> n % 2 == 0:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;mid = n // 2<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Два центральных символа:"</span>, s[mid-1:mid+1])<br>
+                    <span class="keyword">else</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;mid = n // 2<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Центральный символ:"</span>, s[mid])
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Проверка на палиндром</h3>
+                <p>Проверьте, читается ли строка одинаково слева направо и справа налево. Используйте срез.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    s = <span class="keyword">input</span>(<span class="string">"Введите строку: "</span>)<br>
+                    <span class="keyword">if</span> s == s[::-1]:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Это палиндром!"</span>)<br>
+                    <span class="keyword">else</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Не палиндром"</span>)
+                </div>
+            </div>
+        </div>
+
+        <!-- Итоги урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Теперь вы знаете:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li>Как обращаться к символам через индексы (в т.ч. отрицательные)</li>
+                    <li>Как получать длину строки функцией <code>len()</code></li>
+                    <li>Как извлекать части строки с помощью срезов <code>[start:stop:step]</code></li>
+                    <li>Как перевернуть строку срезом <code>[::-1]</code></li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная идея:</strong> Умение работать со строками на уровне символов и подстрок – основа для анализа текста, парсинга данных и многих алгоритмов.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Напишите программу, которая запрашивает строку и выводит её без первого и последнего символа.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Дана строка, содержащая имя и фамилию через пробел (например, "Иван Петров"). Поменяйте их местами и выведите "Петров Иван".</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 3</h3>
+                <p>Напишите программу, которая переворачивает каждое слово в предложении (например, "Привет мир" → "тевирП рим").</p>
+            </div>
+            <button class="botton" onclick="window.location.href='python_basics.html'">Перейти дальше</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Строки: индексация, срезы, длина</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

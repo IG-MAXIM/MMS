@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Оператор continue и вложенные циклы в Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Оператор continue и вложенные циклы</h1>
+            <p class="subtitle">Управление повторениями: пропуск итераций и многомерные обходы данных</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: continue -->
+            <div class="card">
+                <h2><i class="fas fa-forward"></i> Оператор continue</h2>
+                <div class="section">
+                    <p><strong>continue</strong> немедленно переходит к следующей итерации цикла, пропуская оставшиеся инструкции в текущем шаге.</p>
+
+                    <h3>Пример в for</h3>
+                    <div class="code-block">
+                        <span class="keyword">for</span> i <span class="keyword">in</span> range(10):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> i % 2 == 0:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i)
+                    </div>
+                    <p>Выведет только нечётные числа: 1 3 5 7 9.</p>
+
+                    <h3>Пример в while</h3>
+                    <div class="code-block">
+                        i = 0<br>
+                        <span class="keyword">while</span> i < 10:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;i += 1<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> i == 5:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i)
+                    </div>
+                    <p>Выведет 1 2 3 4 6 7 8 9 10 (5 пропущено).</p>
+                </div>
+            </div>
+
+            <!-- Правая карточка: Вложенные циклы -->
+            <div class="card">
+                <h2><i class="fas fa-layer-group"></i> Вложенные циклы</h2>
+                <div class="section">
+                    <p>Один цикл внутри другого — для перебора всех комбинаций или двумерных структур.</p>
+
+                    <h3>Синтаксис</h3>
+                    <div class="code-block">
+                        <span class="keyword">for</span> i <span class="keyword">in</span> range(3):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> j <span class="keyword">in</span> range(3):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i, j)
+                    </div>
+
+                    <h3>Таблица умножения</h3>
+                    <div class="code-block">
+                        <span class="keyword">for</span> i <span class="keyword">in</span> range(1, 6):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> j <span class="keyword">in</span> range(1, 6):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i*j, end=<span class="string">" "</span>)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>()
+                    </div>
+                    <p>Выведет таблицу умножения 5×5.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: continue во вложенных циклах + break -->
+        <div class="card">
+            <h2><i class="fas fa-sliders-h"></i> continue во вложенных циклах и break</h2>
+            <div class="section">
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-forward"></i> continue во вложенном цикле</h4>
+                        <p><code>continue</code> действует только на <strong>ближайший</strong> цикл, в котором он написан.</p>
+                        <div class="code-block" style="margin-top:10px;">
+                            <span class="keyword">for</span> i <span class="keyword">in</span> range(3):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> j <span class="keyword">in</span> range(5):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> j % 2 == 0:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i, j)
+                        </div>
+                        <p style="margin-top:10px;">Выводит пары, где j – нечётное.</p>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-stop-circle"></i> break во вложенном цикле</h4>
+                        <p>Аналогично <code>break</code> прерывает только текущий внутренний цикл.</p>
+                        <div class="code-block" style="margin-top:10px;">
+                            <span class="keyword">for</span> i <span class="keyword">in</span> range(3):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> j <span class="keyword">in</span> range(5):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> j == 2:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i, j)
+                        </div>
+                        <p style="margin-top:10px;">Выводит для каждого i значения j=0 и j=1.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Пропуск отрицательных</h3>
+                <p>Дан список чисел. Выведите только положительные, используя <code>continue</code>.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    nums = [3, -1, 0, 7, -5, 4]<br>
+                    <span class="keyword">for</span> x <span class="keyword">in</span> nums:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> x <= 0:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(x)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Все пары чисел</h3>
+                <p>Выведите все возможные пары (a, b), где a от 1 до 3, b от 1 до 3. Используйте вложенные циклы.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">for</span> a <span class="keyword">in</span> range(1, 4):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> b <span class="keyword">in</span> range(1, 4):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"("</span>, a, <span class="string">","</span>, b, <span class="string">")"</span>, end=<span class="string">" "</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>()
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Прямоугольник с пропуском</h3>
+                <p>Нарисуйте прямоугольник 5×5 из звёздочек, но для i=2 пропустите всю строку с помощью <code>continue</code>.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">for</span> i <span class="keyword">in</span> range(5):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> i == 2:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> j <span class="keyword">in</span> range(5):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"*"</span>, end=<span class="string">""</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>()
+                </div>
+            </div>
+        </div>
+
+        <!-- Итоги урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Сегодня вы освоили:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li><code>continue</code> — пропуск текущей итерации</li>
+                    <li>Вложенные циклы — перебор комбинаций</li>
+                    <li><code>break</code> во вложенных циклах — выход только из внутреннего</li>
+                    <li>Совместное использование <code>continue</code> и вложенных циклов</li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главное:</strong> Управляющие операторы позволяют гибко управлять логикой циклов, а вложенные конструкции — решать сложные задачи с многомерными данными.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Дана строка. Выведите только те символы, которые не являются цифрами. Используйте <code>continue</code>.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Напишите программу, которая выводит все комбинации бросков двух игральных костей (от 1 до 6). Сколько всего комбинаций?</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 3</h3>
+                <p>Создайте вложенный цикл, который выводит "лесенку" из чисел:</p>
+                <div class="code-block">
+                    1<br>
+                    1 2<br>
+                    1 2 3<br>
+                    1 2 3 4<br>
+                    1 2 3 4 5
+                </div>
+            </div>
+            <button class="botton" onclick="window.location.href='python_basics.html'">Перейти дальше</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Оператор continue и вложенные циклы</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
