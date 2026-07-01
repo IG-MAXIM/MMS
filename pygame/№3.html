@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Функции ввода и вывода в Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Функции ввода и вывода в Python</h1>
+            <p class="subtitle">Научитесь общаться с программой: выводить данные и получать ответ от пользователя</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: print() -->
+            <div class="card">
+                <h2><i class="fas fa-print"></i> Функция print()</h2>
+                <div class="section">
+                    <p>Функция <span class="keyword">print()</span> выводит информацию на экран. Её можно настроить так, как удобно вам.</p>
+
+                    <!-- Параметры в виде сетки характеристик -->
+                    <h3>Параметры</h3>
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <i class="fas fa-list"></i>
+                            <div class="label">значения</div>
+                            <small>данные через запятую</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <div class="label">sep</div>
+                            <small>разделитель (по умолчанию пробел)</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-level-down-alt"></i>
+                            <div class="label">end</div>
+                            <small>что выводить в конце (по умолчанию перевод строки)</small>
+                        </div>
+                    </div>
+
+                    <!-- Сравнение sep и end для наглядности -->
+                    <div class="lang-compare" style="margin-top: 15px;">
+                        <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                            <h4><i class="fas fa-arrows-alt-h"></i> Разделитель sep</h4>
+                            <div class="code-block" style="margin-top:10px;">
+                                <span class="keyword">print</span>(<span class="string">"01"</span>, <span class="string">"02"</span>, <span class="string">"2024"</span>, sep=<span class="string">"."</span>)
+                            </div>
+                            <p style="margin-top:10px;">Выведет: <code>01.02.2024</code></p>
+                        </div>
+                        <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                            <h4><i class="fas fa-level-down-alt"></i> Окончание end</h4>
+                            <div class="code-block" style="margin-top:10px;">
+                                <span class="keyword">print</span>(<span class="string">"Привет"</span>, end=<span class="string">" "</span>)<br>
+                                <span class="keyword">print</span>(<span class="string">"мир!"</span>)
+                            </div>
+                            <p style="margin-top:10px;">Выведет: <code>Привет мир!</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая карточка: input() -->
+            <div class="card">
+                <h2><i class="fas fa-keyboard"></i> Функция input()</h2>
+                <div class="section">
+                    <p>Функция <span class="keyword">input()</span> получает от пользователя текстовую строку. Чтобы получить число, нужно преобразовывать.</p>
+
+                    <!-- Важное предупреждение -->
+                    <div class="error-box">
+                        <h4>Важно!</h4>
+                        <p><span class="keyword">input()</span> всегда возвращает <strong>строку</strong>. Для чисел используйте <code>int()</code> или <code>float()</code>.</p>
+                    </div>
+
+                    <!-- Примеры преобразования типов в плитках преимуществ -->
+                    <h3 style="margin-top:15px;">Преобразование типов</h3>
+                    <div class="adv-grid">
+                        <div class="adv-item">
+                            <i class="fas fa-calculator"></i>
+                            <div class="adv-text">int()</div>
+                            <p style="font-size:0.85rem;">возвращает целое число</p>
+                        </div>
+                        <div class="adv-item">
+                            <i class="fas fa-ruler"></i>
+                            <div class="adv-text">float()</div>
+                            <p style="font-size:0.85rem;">возвращает дробное число</p>
+                        </div>
+                        <div class="adv-item">
+                            <i class="fas fa-font"></i>
+                            <div class="adv-text">str()</div>
+                            <p style="font-size:0.85rem;">возвращает строку (обычно не нужна, input и так строка)</p>
+                        </div>
+                    </div>
+
+                    <!-- Частая ошибка с наглядным примером -->
+                    <div class="tip-box" style="margin-top:15px;">
+                        <h4>Частая ошибка</h4>
+                        <div class="code-block">
+                            age = <span class="keyword">input</span>(<span class="string">"Возраст: "</span>)<br>
+                            <span class="comment"># ОШИБКА: age – строка, + 5 нельзя</span><br><br>
+                            age = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Возраст: "</span>))<br>
+                            <span class="comment"># ПРАВИЛЬНО: age теперь число</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: Практические задания (с кнопками показа кода) -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Вывод информации о себе</h3>
+                <p>Выведите три строчки: имя, класс и любимый предмет.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать код" data-hide-text="Скрыть код"><i class="fas fa-eye"></i> <span>Показать код</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">print</span>(<span class="string">"Меня зовут: Анна"</span>)<br>
+                    <span class="keyword">print</span>(<span class="string">"Я учусь в 8 классе"</span>)<br>
+                    <span class="keyword">print</span>(<span class="string">"Мой любимый предмет: информатика"</span>)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Использование переменных</h3>
+                <p>Создайте переменные и выведите их одной командой.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать код" data-hide-text="Скрыть код"><i class="fas fa-eye"></i> <span>Показать код</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    name = <span class="string">"Алексей"</span><br>
+                    grade = 8<br>
+                    subject = <span class="string">"математика"</span><br>
+                    hobby = <span class="string">"программирование"</span><br><br>
+                    <span class="keyword">print</span>(<span class="string">"Имя:"</span>, name, <span class="string">"Класс:"</span>, grade, <span class="string">"Предмет:"</span>, subject, <span class="string">"Хобби:"</span>, hobby)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Сумма двух чисел (ввод с клавиатуры)</h3>
+                <p>Запросите два числа и выведите их сумму.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать код" data-hide-text="Скрыть код"><i class="fas fa-eye"></i> <span>Показать код</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    num1 = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Введите первое число: "</span>))<br>
+                    num2 = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Введите второе число: "</span>))<br>
+                    <span class="keyword">print</span>(<span class="string">"Сумма:"</span>, num1 + num2)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 4: Периметр прямоугольника</h3>
+                <p>Запросите длину и ширину, вычислите периметр.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task4', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать код" data-hide-text="Скрыть код"><i class="fas fa-eye"></i> <span>Показать код</span></button>
+                <div id="task4" class="code-block" style="display:none; margin-top:15px;">
+                    length = <span class="keyword">float</span>(<span class="keyword">input</span>(<span class="string">"Длина: "</span>))<br>
+                    width = <span class="keyword">float</span>(<span class="keyword">input</span>(<span class="string">"Ширина: "</span>))<br>
+                    <span class="keyword">print</span>(<span class="string">"Периметр:"</span>, 2 * (length + width))
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 5: Визитная карточка</h3>
+                <p>Создайте программу-генератор визитной карточки.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task5', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать код" data-hide-text="Скрыть код"><i class="fas fa-eye"></i> <span>Показать код</span></button>
+                <div id="task5" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">print</span>(<span class="string">"=== Генератор визитной карточки ==="</span>)<br>
+                    name = <span class="keyword">input</span>(<span class="string">"ФИО: "</span>)<br>
+                    school = <span class="keyword">input</span>(<span class="string">"Школа: "</span>)<br>
+                    phone = <span class="keyword">input</span>(<span class="string">"Телефон: "</span>)<br><br>
+                    <span class="keyword">print</span>(<span class="string">"="</span>*30)<br>
+                    <span class="keyword">print</span>(<span class="string">"ВИЗИТНАЯ КАРТОЧКА"</span>)<br>
+                    <span class="keyword">print</span>(<span class="string">"="</span>*30)<br>
+                    <span class="keyword">print</span>(<span class="string">"ФИО:"</span>, name)<br>
+                    <span class="keyword">print</span>(<span class="string">"Школа:"</span>, school)<br>
+                    <span class="keyword">print</span>(<span class="string">"Телефон:"</span>, phone)<br>
+                    <span class="keyword">print</span>(<span class="string">"="</span>*30)
+                </div>
+            </div>
+        </div>
+
+        <!-- Итог урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Теперь вы умеете:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li>Выводить данные с помощью <strong>print()</strong></li>
+                    <li>Настраивать разделители и окончания строк</li>
+                    <li>Получать данные от пользователя через <strong>input()</strong></li>
+                    <li>Преобразовывать строки в числа (<strong>int()</strong>, <strong>float()</strong>)</li>
+                    <li>Создавать простые интерактивные программы</li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная суть:</strong> Общение с программой через ввод и вывод – основа любого полезного приложения. Теперь ваши программы могут реагировать на действия пользователя!
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Выведите расписание ваших уроков на неделю, используя один вызов <code>print()</code> с параметром <code>sep</code>.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Создайте программу-калькулятор, которая запрашивает два числа и операцию (+, -, *, /) и выводит результат.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 3</h3>
+                <p>Напишите программу, которая запрашивает имя пользователя и выводит приветствие в рамке из звёздочек (ASCII-арт).</p>
+            </div>
+            <button class="botton" onclick="window.location.href='№4.html'">Перейти дальше</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Функции ввода и вывода данных</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

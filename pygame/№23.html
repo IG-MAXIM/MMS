@@ -1,0 +1,240 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Виджет Entry и компоновка pack, grid</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Виджет Entry и компоновка pack, grid</h1>
+            <p class="subtitle">Освойте однострочный ввод текста и управляйте расположением элементов в окне</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: Entry -->
+            <div class="card">
+                <h2><i class="fas fa-i-cursor"></i> Виджет Entry</h2>
+                <div class="section">
+                    <p><strong>Entry</strong> — поле для ввода одной строки текста. Его используют для получения данных от пользователя: имени, возраста, URL и т.д.</p>
+                    <h3>Создание и получение текста</h3>
+                    <div class="code-block">
+                        entry = tk.Entry(root)<br>
+                        entry.pack()<br>
+                        <span class="comment"># Получить введённый текст:</span><br>
+                        text = entry.get()<br>
+                        <span class="comment"># Очистить поле:</span><br>
+                        entry.delete(0, tk.END)
+                    </div>
+                    <p>Параметры:</p>
+                    <ul style="padding-left:20px; margin:10px 0;">
+                        <li><code>width</code> — ширина в символах</li>
+                        <li><code>show</code> — маскировка (например, <code>"*"</code> для пароля)</li>
+                        <li><code>state</code> — <code>"normal"</code>, <code>"readonly"</code>, <code>"disabled"</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Правая карточка: pack -->
+            <div class="card">
+                <h2><i class="fas fa-arrows-alt-v"></i> Компоновка pack</h2>
+                <div class="section">
+                    <p><strong>pack()</strong> — простейший менеджер геометрии. Он размещает виджеты по очереди: друг за другом по вертикали или горизонтали.</p>
+                    <h3>Основные параметры</h3>
+                    <div class="code-block">
+                        widget.pack(side=tk.TOP, fill=tk.X, padx=5, pady=5)
+                    </div>
+                    <ul style="padding-left:20px; margin:10px 0;">
+                        <li><code>side</code> — TOP, BOTTOM, LEFT, RIGHT</li>
+                        <li><code>fill</code> — X (по ширине), Y (по высоте), BOTH</li>
+                        <li><code>expand</code> — True/False, растягивать ли при изменении окна</li>
+                        <li><code>padx / pady</code> — внешние отступы</li>
+                    </ul>
+                    <p>Удобен для быстрой вёрстки, но сложные макеты делать трудно.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: grid -->
+        <div class="card">
+            <h2><i class="fas fa-th"></i> Компоновка grid</h2>
+            <div class="section">
+                <p><strong>grid()</strong> размещает виджеты в ячейках таблицы (строках и столбцах). Это самый гибкий и часто используемый способ.</p>
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-table"></i> Базовый синтаксис</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            label = tk.Label(root, text=<span class="string">"Имя:"</span>)<br>
+                            label.grid(row=0, column=0)<br>
+                            entry = tk.Entry(root)<br>
+                            entry.grid(row=0, column=1)
+                        </div>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-arrows-alt"></i> Объединение ячеек</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            <span class="comment"># Кнопка на два столбца</span><br>
+                            btn.grid(row=1, column=0, columnspan=2, sticky=<span class="string">"ew"</span>)
+                        </div>
+                    </div>
+                </div>
+                <p>Параметры:</p>
+                <ul style="padding-left:20px; margin:10px 0;">
+                    <li><code>row</code>, <code>column</code> — строка и столбец</li>
+                    <li><code>columnspan</code>, <code>rowspan</code> — на сколько столбцов/строк растянуть</li>
+                    <li><code>sticky</code> — N, S, E, W или их комбинации ("ew", "nsew")</li>
+                    <li><code>padx / pady</code> — отступы внутри ячейки</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Практические задания -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Копирование текста</h3>
+                <p>Создайте поле Entry и кнопку "Показать". При нажатии на кнопку введённый текст должен появиться в Label под полем.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">import</span> tkinter <span class="keyword">as</span> tk<br>
+                    root = tk.Tk()<br>
+                    <span class="keyword">def</span> <span class="function">show_text</span>():<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;text = entry.get()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;label.config(text=text)<br>
+                    entry = tk.Entry(root)<br>
+                    entry.pack()<br>
+                    btn = tk.Button(root, text=<span class="string">"Показать"</span>, command=show_text)<br>
+                    btn.pack()<br>
+                    label = tk.Label(root, text=<span class="string">""</span>)<br>
+                    label.pack()<br>
+                    root.mainloop()
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Форма входа (grid)</h3>
+                <p>С помощью <code>grid()</code> сверстайте форму входа: "Логин" (Label + Entry), "Пароль" (Label + Entry с маскировкой), кнопка "Войти". При нажатии на кнопку сверяйте пароль с захардкоженным значением и выводите результат в отдельную метку.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">import</span> tkinter <span class="keyword">as</span> tk<br>
+                    root = tk.Tk()<br>
+                    root.title(<span class="string">"Форма входа"</span>)<br><br>
+                    tk.Label(root, text=<span class="string">"Логин:"</span>).grid(row=0, column=0, sticky=<span class="string">"e"</span>, padx=5, pady=5)<br>
+                    entry_login = tk.Entry(root)<br>
+                    entry_login.grid(row=0, column=1, padx=5, pady=5)<br><br>
+                    tk.Label(root, text=<span class="string">"Пароль:"</span>).grid(row=1, column=0, sticky=<span class="string">"e"</span>, padx=5, pady=5)<br>
+                    entry_pass = tk.Entry(root, show=<span class="string">"*"</span>)<br>
+                    entry_pass.grid(row=1, column=1, padx=5, pady=5)<br><br>
+                    result_label = tk.Label(root, text=<span class="string">""</span>)<br>
+                    result_label.grid(row=2, column=0, columnspan=2, pady=5)<br><br>
+                    <span class="keyword">def</span> <span class="function">login</span>():<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> entry_login.get() == <span class="string">"admin"</span> <span class="keyword">and</span> entry_pass.get() == <span class="string">"123"</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_label.config(text=<span class="string">"Успешно!"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_label.config(text=<span class="string">"Неверно!"</span>)<br><br>
+                    tk.Button(root, text=<span class="string">"Войти"</span>, command=login).grid(row=3, column=0, columnspan=2, pady=10)<br>
+                    root.mainloop()
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Калькулятор (grid)</h3>
+                <p>Создайте простой калькулятор: два поля Entry (числа), метка с результатом и 4 кнопки (+, -, *, /), расположенные в таблице 2×2 с помощью grid.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">import</span> tkinter <span class="keyword">as</span> tk<br>
+                    root = tk.Tk()<br>
+                    root.title(<span class="string">"Калькулятор"</span>)<br><br>
+                    entry1 = tk.Entry(root, width=10)<br>
+                    entry1.grid(row=0, column=0, columnspan=2, padx=5, pady=5)<br>
+                    entry2 = tk.Entry(root, width=10)<br>
+                    entry2.grid(row=1, column=0, columnspan=2, padx=5, pady=5)<br><br>
+                    result_label = tk.Label(root, text=<span class="string">"Результат"</span>)<br>
+                    result_label.grid(row=2, column=0, columnspan=2, pady=5)<br><br>
+                    <span class="keyword">def</span> <span class="function">calc</span>(op):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = float(entry1.get())<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b = float(entry2.get())<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> op == <span class="string">"+"</span>: res = a + b<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">elif</span> op == <span class="string">"-"</span>: res = a - b<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">elif</span> op == <span class="string">"*"</span>: res = a * b<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">elif</span> op == <span class="string">"/"</span>: res = a / b <span class="keyword">if</span> b != 0 <span class="keyword">else</span> <span class="string">"Ошибка"</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_label.config(text=str(res))<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">except</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_label.config(text=<span class="string">"Введите числа"</span>)<br><br>
+                    tk.Button(root, text=<span class="string">"+"</span>, command=<span class="keyword">lambda</span>: calc(<span class="string">"+"</span>)).grid(row=3, column=0, sticky=<span class="string">"ew"</span>, padx=2)<br>
+                    tk.Button(root, text=<span class="string">"-"</span>, command=<span class="keyword">lambda</span>: calc(<span class="string">"-"</span>)).grid(row=3, column=1, sticky=<span class="string">"ew"</span>, padx=2)<br>
+                    tk.Button(root, text=<span class="string">"*"</span>, command=<span class="keyword">lambda</span>: calc(<span class="string">"*"</span>)).grid(row=4, column=0, sticky=<span class="string">"ew"</span>, padx=2)<br>
+                    tk.Button(root, text=<span class="string">"/"</span>, command=<span class="keyword">lambda</span>: calc(<span class="string">"/"</span>)).grid(row=4, column=1, sticky=<span class="string">"ew"</span>, padx=2)<br>
+                    root.mainloop()
+                </div>
+            </div>
+        </div>
+
+        <!-- Итоги урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Сегодня вы освоили:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li>Создание поля ввода <code>Entry</code> и получение из него текста</li>
+                    <li>Компоновку виджетов с помощью <code>pack</code></li>
+                    <li>Компоновку виджетов с помощью <code>grid</code> (строки и столбцы)</li>
+                    <li>Выбор между pack и grid в зависимости от сложности макета</li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главное:</strong> Удобная и понятная компоновка — залог хорошего интерфейса. Правильное использование grid позволяет создавать аккуратные и адаптивные окна.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Создайте окно-«конвертер»: поле Entry для суммы в рублях, кнопка «Перевести в доллары» и поле Entry (только для чтения) с результатом. Используйте grid.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Сверстайте форму регистрации: поля "Имя", "Фамилия", "Email", "Пароль" (с маскировкой), "Повтор пароля" и кнопка «Зарегистрироваться». При нажатии проверяйте, что поля не пустые и пароли совпадают. Используйте grid.</p>
+            </div>
+            <button class="botton" onclick="window.location.href='№24.html'">Перейти дальше</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Виджет Entry, компоновка pack и grid</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

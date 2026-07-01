@@ -1,0 +1,216 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Итоговый проект: выбор темы и планирование</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Итоговый проект: выбор темы и планирование</h1>
+            <p class="subtitle">Подготовьтесь к созданию собственного программного продукта: выберите идею и составьте дорожную карту</p>
+        </header>
+
+        <!-- Постановка задачи -->
+        <div class="card">
+            <h2><i class="fas fa-book-open"></i> Постановка задачи</h2>
+            <div class="section">
+                <p>Финальный этап курса — разработка индивидуального проекта. Это может быть <strong>игра на Pygame</strong> или <strong>приложение с графическим интерфейсом на Tkinter</strong>. На этом занятии вы выбираете тему, описываете идею и составляете план работы.</p>
+                <div class="explanation">
+                    <h4>Что нужно сделать сегодня</h4>
+                    <ul style="padding-left:20px; margin:10px 0;">
+                        <li>Выбрать тип проекта: игра (Pygame) или GUI-приложение (Tkinter)</li>
+                        <li>Сформулировать название и краткое описание (2-3 предложения)</li>
+                        <li>Перечислить основные функции/возможности программы (минимум 4-5 пунктов)</li>
+                        <li>Продумать, какие технологии и инструменты вы будете использовать (библиотеки, классы, файлы)</li>
+                        <li>Составить поэтапный план разработки: что делать на каждом уроке, какие части программы создавать</li>
+                        <li>Оформить всё в виде документа (текстового или .md) и согласовать с преподавателем</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Идеи для проектов -->
+        <div class="card">
+            <h2><i class="fas fa-lightbulb"></i> Примеры тем</h2>
+            <div class="section">
+                <p>Вот несколько идей, которые помогут определиться:</p>
+                <div class="use-grid">
+                    <div class="use-card">
+                        <i class="fas fa-calculator"></i>
+                        <strong>Продвинутый калькулятор</strong>
+                        <p>Tkinter, история вычислений, скобки, перевод систем счисления</p>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-list-alt"></i>
+                        <strong>Менеджер задач (To-Do)</strong>
+                        <p>Tkinter, добавление, удаление, редактирование задач, сохранение в файл</p>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-gamepad"></i>
+                        <strong>Змейка (Snake)</strong>
+                        <p>Pygame, спрайты, управление стрелками, рост, счёт</p>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-chess-board"></i>
+                        <strong>Крестики-нолики (Tkinter)</strong>
+                        <p>Сетка из кнопок, проверка победы, игра против друга или ИИ</p>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-paint-brush"></i>
+                        <strong>Графический редактор</strong>
+                        <p>Tkinter + Canvas, рисование мышью, выбор цвета, ластик</p>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-ghost"></i>
+                        <strong>Платформер</strong>
+                        <p>Pygame, спрайты, гравитация, препятствия, сбор монет</p>
+                    </div>
+                </div>
+                <p>Вы можете предложить свою тему, не указанную в списке. Главное, чтобы проект был вам интересен и соответствовал вашему уровню.</p>
+            </div>
+        </div>
+
+        <!-- Требования к плану -->
+        <div class="card">
+            <h2><i class="fas fa-clipboard-list"></i> Структура плана</h2>
+            <div class="section">
+                <p>Ваш план должен содержать следующие разделы:</p>
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-info-circle"></i> 1. Описание проекта</h4>
+                        <ul style="padding-left:18px;">
+                            <li>Название</li>
+                            <li>Тип (Pygame / Tkinter)</li>
+                            <li>Цель: что делает программа, какую проблему решает или как развлекает</li>
+                        </ul>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-list-check"></i> 2. Функциональные требования</h4>
+                        <ul style="padding-left:18px;">
+                            <li>Список возможностей (не менее 5)</li>
+                            <li>Примерный вид интерфейса / экрана (можно схематично)</li>
+                            <li>Какие данные будут храниться (переменные, списки, файлы)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lang-compare" style="margin-top:15px;">
+                    <div class="lang-box" style="background: #fdf5e6; border-color: #f4a460;">
+                        <h4><i class="fas fa-layer-group"></i> 3. Техническая база</h4>
+                        <ul style="padding-left:18px;">
+                            <li>Библиотеки (tkinter / pygame, random, math, os и т.д.)</li>
+                            <li>Основные классы и функции</li>
+                            <li>События или механики, которые необходимо обработать</li>
+                        </ul>
+                    </div>
+                    <div class="lang-box" style="background: #f0f8ff; border-color: #6a5acd;">
+                        <h4><i class="fas fa-calendar-alt"></i> 4. План-график</h4>
+                        <ul style="padding-left:18px;">
+                            <li>Разбивка на 3-4 этапа (занятия)</li>
+                            <li>Что будет готово к каждому этапу</li>
+                            <li>Контрольные точки: когда показываете прототип, финальную версию</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Чеклист -->
+        <div class="card">
+            <h2><i class="fas fa-check-double"></i> Чеклист готовности плана</h2>
+            <div class="section">
+                <p>Прежде чем сдать план, убедитесь, что:</p>
+                <div class="task">
+                    <h3><i class="fas fa-check-circle"></i> Содержание</h3>
+                    <ul style="padding-left:20px;">
+                        <li>Тема сформулирована чётко и понятно</li>
+                        <li>Описано, что будет делать программа и почему это интересно</li>
+                        <li>Перечислены основные функции, которые вы реально можете реализовать за 3-4 занятия</li>
+                        <li>Указан тип графического интерфейса или игрового движка</li>
+                    </ul>
+                </div>
+                <div class="task">
+                    <h3><i class="fas fa-check-circle"></i> Реалистичность</h3>
+                    <ul style="padding-left:20px;">
+                        <li>Проект не слишком маленький (не одна кнопка) и не перегруженный (не AAA-игра)</li>
+                        <li>Вы понимаете, как будете реализовывать каждую функцию (какие конструкции, алгоритмы)</li>
+                        <li>Есть запасной упрощённый вариант на случай нехватки времени</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Навыки -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Какие навыки вы закрепите</h2>
+            <div class="section">
+                <div class="adv-grid">
+                    <div class="adv-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <div class="adv-text">Проектирование</div>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-tasks"></i>
+                        <div class="adv-text">Планирование</div>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-code-branch"></i>
+                        <div class="adv-text">Структурирование кода</div>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="adv-text">Управление временем</div>
+                    </div>
+                </div>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная цель:</strong> Научиться превращать идею в конкретный план, оценивать свои силы и закладывать фундамент для успешного завершения проекта в срок.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Задание к следующему занятию</h2>
+            <div class="homework-item">
+                <h3>Подготовить и согласовать план</h3>
+                <p>Оформите план проекта в текстовом виде (можно в файле <code>plan.txt</code> или <code>README.md</code>) и пришлите преподавателю на проверку до следующего занятия. На следующем уроке начнём реализацию!</p>
+                <p><strong>Формат сдачи:</strong> текстовый файл, отправленный в общую папку или на почту.</p>
+            </div>
+            <button class="botton" onclick="window.location.href='../'">Вернуться в начало</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Итоговый проект: выбор темы и планирование</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

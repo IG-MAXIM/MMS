@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Интегрированные среды разработки для Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Интегрированные среды разработки для Python</h1>
+            <p class="subtitle">Сравнение и выбор оптимальной IDE для разработки на Python</p>
+        </header>
+        
+        <!-- Что такое IDE? -->
+        <div class="card">
+            <h2><i class="fas fa-info-circle"></i> Что такое IDE?</h2>
+            <div class="section">
+                <h3>Интегрированная среда разработки (IDE)</h3>
+                <p>IDE (Integrated Development Environment) — это программное обеспечение, которое объединяет в себе редактор кода, инструменты отладки, автодополнение, управление проектами и другие функции для эффективной разработки.</p>
+                
+                <div class="adv-grid">
+                    <div class="adv-item">
+                        <i class="fas fa-code"></i>
+                        <div class="adv-text">Редактор кода</div>
+                        <p style="font-size:0.85rem; color:#555;">Подсветка, автодополнение, форматирование</p>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-bug"></i>
+                        <div class="adv-text">Отладчик</div>
+                        <p style="font-size:0.85rem; color:#555;">Пошаговое выполнение, точки останова</p>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-terminal"></i>
+                        <div class="adv-text">Терминал</div>
+                        <p style="font-size:0.85rem; color:#555;">Встроенная консоль для команд</p>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <div class="adv-text">Управление проектами</div>
+                        <p style="font-size:0.85rem; color:#555;">Структура, контроль версий</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Топ-5 IDE (сетка карточек) -->
+        <div class="card">
+            <h2><i class="fas fa-star"></i> Топ-5 IDE для Python</h2>
+            <div class="use-grid">
+                <div class="use-card">
+                    <i class="fab fa-python"></i>
+                    <strong>PyCharm</strong>
+                    <p>Сложность: средняя/высокая | Бесплатная Community Edition</p>
+                    <p>Особенности: умное автодополнение, Django, отладчик</p>
+                    <p class="rating" style="color:#f39c12;">★★★★★</p>
+                </div>
+                <div class="use-card">
+                    <i class="fas fa-code"></i>
+                    <strong>VS Code</strong>
+                    <p>Сложность: низкая/средняя | Полностью бесплатно</p>
+                    <p>Особенности: легковесность, расширения, Git</p>
+                    <p class="rating" style="color:#f39c12;">★★★★★</p>
+                </div>
+                <div class="use-card">
+                    <i class="fab fa-microsoft"></i>
+                    <strong>IDLE</strong>
+                    <p>Сложность: очень низкая | В комплекте с Python</p>
+                    <p>Особенности: простота, базовые функции, для старта</p>
+                    <p class="rating" style="color:#f39c12;">★★★☆☆</p>
+                </div>
+                <div class="use-card">
+                    <i class="fab fa-java"></i>
+                    <strong>Jupyter</strong>
+                    <p>Сложность: низкая | Бесплатно</p>
+                    <p>Интерактивная разработка, визуализация данных</p>
+                    <p class="rating" style="color:#f39c12;">★★★★☆</p>
+                </div>
+                <div class="use-card">
+                    <i class="fas fa-atom"></i>
+                    <strong>Atom</strong>
+                    <p>Сложность: низкая | Бесплатно</p>
+                    <p>Гибкая настройка, поддержка плагинов</p>
+                    <p class="rating" style="color:#f39c12;">★★★★☆</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Подробный обзор IDE -->
+        <div class="card">
+            <h2><i class="fas fa-desktop"></i> Подробный обзор IDE</h2>
+            
+            <div class="task">
+                <h3><i class="fab fa-python"></i> 1. PyCharm (JetBrains)</h3>
+                <p><strong>Лучший выбор для профессиональной разработки</strong></p>
+                <div class="code-block">
+                    <span class="comment"># Преимущества:</span><br>
+                    - Умное автодополнение кода<br>
+                    - Мощный отладчик и профилировщик<br>
+                    - Поддержка веб-фреймворков (Django, Flask)<br>
+                    - Интеграция с системами контроля версий<br>
+                    - Поддержка научных библиотек (NumPy, SciPy)<br><br>
+                    
+                    <span class="comment"># Недостатки:</span><br>
+                    - Требует много ресурсов<br>
+                    - Бесплатная версия имеет ограничения<br>
+                    - Сложна для начинающих<br><br>
+                    
+                    <span class="comment"># Кому подходит:</span><br>
+                    • Профессиональные разработчики<br>
+                    • Студенты компьютерных наук<br>
+                    • Team Lead и архитекторы
+                </div>
+            </div>
+            
+            <div class="task">
+                <h3><i class="fas fa-code"></i> 2. Visual Studio Code</h3>
+                <p><strong>Лучший выбор для начинающих и универсальной разработки</strong></p>
+                <div class="code-block">
+                    <span class="comment"># Преимущества:</span><br>
+                    - Легковесная и быстрая<br>
+                    - Огромная библиотека расширений<br>
+                    - Отличная поддержка Git<br>
+                    - Бесплатная и с открытым исходным кодом<br>
+                    - Интеграция с терминалом<br><br>
+                    
+                    <span class="comment"># Настройка для Python:</span><br>
+                    1. Установите VS Code<br>
+                    2. Установите расширение "Python"<br>
+                    3. Установите расширение "Pylance"<br>
+                    4. Настройте интерпретатор Python<br><br>
+                    
+                    <span class="comment"># Полезные расширения:</span><br>
+                    • Python<br>
+                    • Pylance<br>
+                    • Jupyter<br>
+                    • Python Docstring Generator<br>
+                    • autoDocstring
+                </div>
+            </div>
+            
+            <div class="task">
+                <h3><i class="fab fa-microsoft"></i> 3. IDLE (Integrated Development and Learning Environment)</h3>
+                <p><strong>Базовая среда, встроенная в Python</strong></p>
+                <div class="code-block">
+                    <span class="comment"># Преимущества:</span><br>
+                    - Не требует установки (идет с Python)<br>
+                    - Очень простая в использовании<br>
+                    - Идеальна для обучения основам<br>
+                    - Минимальные требования к системе<br><br>
+                    
+                    <span class="comment"># Основные возможности:</span><br>
+                    1. Редактор с подсветкой синтаксиса<br>
+                    2. Отладчик<br>
+                    3. Python Shell (интерактивная консоль)<br>
+                    4. Поиск и замена в файлах<br><br>
+                    
+                    <span class="comment"># Как запустить:</span><br>
+                    Windows: Пуск → Python → IDLE<br>
+                    macOS/Linux: Откройте терминал → введите "idle"<br>
+                    Или выполните: python -m idlelib.idle
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Установка и настройка -->
+        <div class="card">
+            <h2><i class="fas fa-download"></i> Установка и настройка</h2>
+            
+            <div class="task">
+                <h3>Установка Python с IDLE</h3>
+                <div class="code-block">
+                    <span class="comment"># Windows:</span><br>
+                    1. Скачайте установщик с python.org<br>
+                    2. Во время установки отметьте "Add Python to PATH"<br>
+                    3. Отметьте "Install launcher for all users"<br>
+                    4. Запустите IDLE из меню "Пуск"<br><br>
+                    
+                    <span class="comment"># Проверка установки:</span><br>
+                    Откройте командную строку и введите:<br>
+                    python --version<br>
+                    <span class="comment"># Должна отобразиться версия Python</span>
+                </div>
+            </div>
+            
+            <div class="task">
+                <h3>Базовая настройка VS Code для Python</h3>
+                <div class="code-block">
+                    <span class="comment"># Установка расширений:</span><br>
+                    1. Откройте VS Code<br>
+                    2. Нажмите Ctrl+Shift+X (расширения)<br>
+                    3. Найдите "Python" и установите<br>
+                    4. Установите "Pylance" для автодополнения<br><br>
+                    
+                    <span class="comment"># Настройка интерпретатора:</span><br>
+                    1. Нажмите Ctrl+Shift+P<br>
+                    2. Введите "Python: Select Interpreter"<br>
+                    3. Выберите вашу версию Python<br><br>
+                    
+                    <span class="comment"># Создание первого файла:</span><br>
+                    1. Создайте файл с расширением .py<br>
+                    2. Начните писать код<br>
+                    3. Для запуска нажмите F5 или правой кнопкой → "Run Python File"
+                </div>
+            </div>
+            
+
+        
+            <button class="botton" onclick="window.location.href='№3.html'">Начать изучение Python</button>
+        </div>
+        
+        <footer>
+            <p>Курс Python для начинающих • Руководство по выбору IDE для Python </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

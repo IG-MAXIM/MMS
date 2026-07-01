@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Переменные и типы данных в Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Переменные и типы данных в Python</h1>
+            <p class="subtitle">Освойте работу с переменными, типами данных и базовыми операциями</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: Переменные -->
+            <div class="card">
+                <h2><i class="fas fa-box"></i> Переменные</h2>
+                <div class="section">
+                    <h3>Что такое переменная?</h3>
+                    <p>Переменная – это именованная область памяти, в которой можно хранить данные. Представьте себе коробку с биркой: на бирке написано имя, а внутри лежит значение.</p>
+
+                    <!-- Новые компактные карточки -->
+                    <div class="use-grid">
+                        <div class="use-card">
+                            <i class="fas fa-tag"></i>
+                            <strong>Имя переменной</strong>
+                            <p>Уникальное название, по которому мы обращаемся к данным. Например: <code>age</code>, <code>name</code>, <code>price</code>.</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-cube"></i>
+                            <strong>Значение</strong>
+                            <p>Данные, которые хранятся в переменной. Может быть числом, строкой, списком и т.д. Например: <code>15</code>, <code>"Анна"</code>.</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-top:15px;"><strong>Правила именования:</strong></p>
+                    <ul style="padding-left:20px; margin:10px 0;">
+                        <li>Только буквы, цифры и знак <code>_</code></li>
+                        <li>Не может начинаться с цифры</li>
+                        <li>Регистр важен: <code>name</code> и <code>Name</code> – разные переменные</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Правая карточка: Типы данных -->
+            <div class="card">
+                <h2><i class="fas fa-database"></i> Основные типы данных</h2>
+                <div class="section">
+                    <p>Python автоматически определяет тип данных при присваивании. Вот главные из них:</p>
+
+                    <!-- Сетка типов -->
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <i class="fas fa-calculator"></i>
+                            <div class="label">int</div>
+                            <small style="color:#555;">целые числа<br>15, -3, 0</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-ruler"></i>
+                            <div class="label">float</div>
+                            <small style="color:#555;">дробные числа<br>1.65, -0.5</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-font"></i>
+                            <div class="label">str</div>
+                            <small style="color:#555;">строки<br>"Привет"</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-toggle-on"></i>
+                            <div class="label">bool</div>
+                            <small style="color:#555;">логические<br>True / False</small>
+                        </div>
+                    </div>
+
+                    <p>Проверить тип можно функцией <code>type()</code>:</p>
+                    <div class="code-block">
+                        <span class="keyword">print</span>(<span class="keyword">type</span>(15))<br>
+                        <span class="comment"># &lt;class 'int'&gt;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: Важные операции -->
+        <div class="card">
+            <h2><i class="fas fa-divide"></i> Важные операции: // и %</h2>
+            
+            <!-- Сравнение двух операций -->
+            <div class="lang-compare">
+                <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                    <h4><i class="fas fa-divide"></i> Целочисленное деление <code>//</code></h4>
+                    <p>Возвращает целую часть от деления.</p>
+                    <div class="code-block" style="margin-top:10px;">
+                        15 // 2 = 7<br>
+                        123 // 10 = 12
+                    </div>
+                    <p style="margin-top:10px;"><strong>Полезно:</strong> отбросить последние цифры числа.</p>
+                </div>
+                <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                    <h4><i class="fas fa-percent"></i> Остаток от деления <code>%</code></h4>
+                    <p>Возвращает остаток после целочисленного деления.</p>
+                    <div class="code-block" style="margin-top:10px;">
+                        15 % 2 = 1<br>
+                        123 % 10 = 3
+                    </div>
+                    <p style="margin-top:10px;"><strong>Полезно:</strong> получить последнюю цифру числа.</p>
+                </div>
+            </div>
+
+            <!-- Новый раздел: / и ** -->
+            <div class="section" style="margin-top:25px;">
+                <h3>Другие полезные операции: / и **</h3>
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #fdf5e6; border-color: #f4a460;">
+                        <h4><i class="fas fa-divide"></i> Обычное деление <code>/</code></h4>
+                        <p>Возвращает вещественный результат (float).</p>
+                        <div class="code-block" style="margin-top:10px;">
+                            15 / 2 = 7.5<br>
+                            10 / 4 = 2.5
+                        </div>
+                        <p style="margin-top:10px;"><strong>Важно:</strong> результат всегда float, даже если числа делятся нацело.</p>
+                    </div>
+                    <div class="lang-box" style="background: #f0f8ff; border-color: #6a5acd;">
+                        <h4><i class="fas fa-superscript"></i> Возведение в степень <code>**</code></h4>
+                        <p>Вычисляет степень числа.</p>
+                        <div class="code-block" style="margin-top:10px;">
+                            2 ** 3 = 8<br>
+                            5 ** 2 = 25<br>
+                            9 ** 0.5 = 3.0
+                        </div>
+                        <p style="margin-top:10px;"><strong>Полезно:</strong> можно извлекать корни, используя дробные степени.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания (с кнопками показа решения) -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Базовые переменные</h3>
+                <p>Создайте переменные для имени, возраста и роста, затем выведите их на экран.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    name = <span class="string">"Анна"</span><br>
+                    age = 15<br>
+                    height = 1.65<br>
+                    <span class="keyword">print</span>(<span class="string">"Имя:"</span>, name)<br>
+                    <span class="keyword">print</span>(<span class="string">"Возраст:"</span>, age)<br>
+                    <span class="keyword">print</span>(<span class="string">"Рост:"</span>, height)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Простые вычисления</h3>
+                <p>Посчитайте сумму двух чисел и удвоенный возраст через переменные.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    a = 10<br>
+                    b = 5<br>
+                    sum_ab = a + b<br>
+                    double_age = age * 2<br>
+                    <span class="keyword">print</span>(<span class="string">"Сумма:"</span>, sum_ab)<br>
+                    <span class="keyword">print</span>(<span class="string">"Удвоенный возраст:"</span>, double_age)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Строки</h3>
+                <p>Соедините две строки и выведите приветствие.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    greeting = <span class="string">"Привет"</span><br>
+                    name = <span class="string">"Анна"</span><br>
+                    message = greeting + <span class="string">", "</span> + name + <span class="string">"!"</span><br>
+                    <span class="keyword">print</span>(message)
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка с задачами на разряды -->
+        <div class="card">
+            <h2><i class="fas fa-puzzle-piece"></i> Задачи на разряды числа</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-star"></i> Сумма цифр двузначного числа</h3>
+                <p>Вводится двузначное число. Найти сумму его цифр.</p>
+                <button class="btn-toggle" onclick="toggleSolution('digit1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="digit1" class="code-block" style="display:none; margin-top:15px;">
+                    n = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Двузначное число: "</span>))<br>
+                    tens = n // 10<br>
+                    units = n % 10<br>
+                    <span class="keyword">print</span>(<span class="string">"Сумма цифр:"</span>, tens + units)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-star"></i> Перестановка цифр</h3>
+                <p>Поменять местами цифры двузначного числа (было 12 → 21).</p>
+                <button class="btn-toggle" onclick="toggleSolution('digit2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="digit2" class="code-block" style="display:none; margin-top:15px;">
+                    n = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Двузначное число: "</span>))<br>
+                    tens = n // 10<br>
+                    units = n % 10<br>
+                    reversed = units * 10 + tens<br>
+                    <span class="keyword">print</span>(<span class="string">"Перевёрнутое:"</span>, reversed)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-star"></i> Цифры трёхзначного числа</h3>
+                <p>Вывести отдельно сотни, десятки и единицы для трёхзначного числа.</p>
+                <button class="btn-toggle" onclick="toggleSolution('digit3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="digit3" class="code-block" style="display:none; margin-top:15px;">
+                    n = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Трёхзначное число: "</span>))<br>
+                    hundreds = n // 100<br>
+                    tens = (n // 10) % 10<br>
+                    units = n % 10<br>
+                    <span class="keyword">print</span>(<span class="string">"Сотни:"</span>, hundreds)<br>
+                    <span class="keyword">print</span>(<span class="string">"Десятки:"</span>, tens)<br>
+                    <span class="keyword">print</span>(<span class="string">"Единицы:"</span>, units)
+                </div>
+            </div>
+        </div>
+
+        <!-- Итоги урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Сегодня мы научились:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li>Создавать переменные и присваивать им значения</li>
+                    <li>Различать типы данных: <strong>int, float, str, bool</strong></li>
+                    <li>Применять операции <strong>//</strong>, <strong>%</strong>, <strong>/</strong> и <strong>**</strong></li>
+                    <li>Решать задачи на выделение цифр в числах</li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная идея:</strong> Переменные – основа программирования. Умение работать с типами данных и арифметикой открывает путь к серьёзным алгоритмам.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Напишите программу, которая находит сумму цифр любого натурального числа.</p>
+            </div>
+            
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Проверьте, делится ли число на 3 (подсказка: сумма цифр должна делиться на 3).</p>
+            </div>
+            
+            <div class="homework-item">
+                <h3>Задание 3</h3>
+                <p>Напишите программу, которая выводит число, полученное записью цифр исходного числа в обратном порядке.</p>
+            </div>
+            
+            <button class="botton" onclick="window.location.href='№5.html'">Перейти дальше</button>
+        </div>
+        
+        <footer>
+            <p>Курс Python для начинающих • Переменные и типы данных</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

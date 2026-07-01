@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Цикл for и функция range() в Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Цикл for и функция range() в Python</h1>
+            <p class="subtitle">Освойте повторение действий: итерация по данным, генерация последовательностей и вложенные циклы</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: Введение -->
+            <div class="card">
+                <h2><i class="fas fa-sync-alt"></i> Что такое цикл for?</h2>
+                <div class="section">
+                    <p><strong>Цикл for</strong> выполняет один и тот же блок кода для каждого элемента последовательности (списка, строки, диапазона и т.д.).</p>
+                    <div class="code-block">
+                        <span class="keyword">for</span> переменная <span class="keyword">in</span> последовательность:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;действие(переменная)
+                    </div>
+
+                    <h3>Для чего нужен?</h3>
+                    <ul style="padding-left:20px; margin:10px 0;">
+                        <li>Обработка всех элементов списка</li>
+                        <li>Посимвольный перебор строки</li>
+                        <li>Повторение действий заданное число раз (через <code>range</code>)</li>
+                        <li>Обход данных в словарях и множествах</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Правая карточка: range и итерация -->
+            <div class="card">
+                <h2><i class="fas fa-list-ol"></i> Функция range()</h2>
+                <div class="section">
+                    <p><code>range()</code> генерирует последовательность целых чисел и часто используется с <code>for</code> для повторения действий определённое количество раз.</p>
+
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="label">range(stop)</div>
+                            <small>0, 1, ..., stop-1</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <div class="label">range(start, stop)</div>
+                            <small>от start до stop-1</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-sort-amount-up"></i>
+                            <div class="label">range(start, stop, step)</div>
+                            <small>с шагом step</small>
+                        </div>
+                    </div>
+
+                    <h3>Примеры</h3>
+                    <div class="code-block">
+                        <span class="comment"># 5 повторений: 0,1,2,3,4</span><br>
+                        <span class="keyword">for</span> i <span class="keyword">in</span> range(5):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i)<br><br>
+
+                        <span class="comment"># От 2 до 5 (не включая 6)</span><br>
+                        <span class="keyword">for</span> i <span class="keyword">in</span> range(2, 6):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i)<br><br>
+
+                        <span class="comment"># Чётные от 0 до 8</span><br>
+                        <span class="keyword">for</span> i <span class="keyword">in</span> range(0, 10, 2):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: Итерация по строкам и спискам -->
+        <div class="card">
+            <h2><i class="fas fa-stream"></i> Итерация по спискам и строкам</h2>
+            <div class="section">
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-list"></i> По списку</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            fruits = [<span class="string">"яблоко"</span>, <span class="string">"банан"</span>, <span class="string">"апельсин"</span>]<br>
+                            <span class="keyword">for</span> fruit <span class="keyword">in</span> fruits:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(fruit)
+                        </div>
+                        <p style="margin-top:10px;">Выведет каждый фрукт на новой строке.</p>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-font"></i> По строке</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            word = <span class="string">"Python"</span><br>
+                            <span class="keyword">for</span> letter <span class="keyword">in</span> word:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(letter)
+                        </div>
+                        <p style="margin-top:10px;">Выведет каждую букву отдельно.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания 1-3 -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания (базовый уровень)</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Сумма чисел от 1 до N</h3>
+                <p>Запросите число N и вычислите сумму всех целых чисел от 1 до N.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    N = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Введите N: "</span>))<br>
+                    total = 0<br>
+                    <span class="keyword">for</span> i <span class="keyword">in</span> range(1, N + 1):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;total += i<br>
+                    <span class="keyword">print</span>(<span class="string">"Сумма:"</span>, total)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Таблица умножения на 5</h3>
+                <p>Выведите таблицу умножения для числа 5 от 1 до 10.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    number = 5<br>
+                    <span class="keyword">for</span> i <span class="keyword">in</span> range(1, 11):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(number, <span class="string">"×"</span>, i, <span class="string">"="</span>, number * i)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Подсчёт гласных</h3>
+                <p>Дана строка. Посчитайте, сколько в ней гласных букв (а, е, ё, и, о, у, ы, э, ю, я).</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    text = <span class="keyword">input</span>(<span class="string">"Введите текст: "</span>)<br>
+                    vowels = <span class="string">"аеёиоуыэюя"</span><br>
+                    count = 0<br>
+                    <span class="keyword">for</span> ch <span class="keyword">in</span> text.lower():<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> ch <span class="keyword">in</span> vowels:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count += 1<br>
+                    <span class="keyword">print</span>(<span class="string">"Гласных:"</span>, count)
+                </div>
+            </div>
+        </div>
+
+        <!-- Продвинутые техники -->
+        <div class="card">
+            <h2><i class="fas fa-users-cog"></i> Вложенные циклы, break и continue</h2>
+            <div class="section">
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #f0f8ff; border-color: #5a77cd;">
+                        <h4><i class="fas fa-layer-group"></i> Вложенные циклы</h4>
+                        <p>Цикл внутри другого цикла — для обхода двумерных структур или комбинаций.</p>
+                        <div class="code-block" style="margin-top:10px;">
+                            <span class="keyword">for</span> i <span class="keyword">in</span> range(3):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> j <span class="keyword">in</span> range(2):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"i ="</span>, i, <span class="string">"j ="</span>, j)
+                        </div>
+                    </div>
+                    <div class="lang-box" style="background: #f0f8ff; border-color: #5a77cd;">
+                        <h4><i class="fas fa-hand-paper"></i> break и continue</h4>
+                        <p><strong>break</strong> — немедленно выходит из цикла.<br>
+                        <strong>continue</strong> — переходит к следующей итерации.</p>
+                        <div class="code-block" style="margin-top:10px;">
+                            <span class="comment"># break: остановка при i == 5</span><br>
+                            <span class="keyword">for</span> i <span class="keyword">in</span> range(10):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> i == 5:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i)<br><br>
+
+                            <span class="comment"># continue: пропуск 2</span><br>
+                            <span class="keyword">for</span> i <span class="keyword">in</span> range(5):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> i == 2:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(i)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Сложные задачи -->
+        <div class="card">
+            <h2><i class="fas fa-puzzle-piece"></i> Сложные задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-star"></i> Поиск простых чисел до N</h3>
+                <p>Выведите все простые числа от 2 до заданного N.</p>
+                <button class="btn-toggle" onclick="toggleSolution('prime', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="prime" class="code-block" style="display:none; margin-top:15px;">
+                    N = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Введите N: "</span>))<br>
+                    <span class="keyword">print</span>(<span class="string">"Простые числа от 2 до"</span>, N, <span class="string">":"</span>)<br>
+                    <span class="keyword">for</span> num <span class="keyword">in</span> range(2, N+1):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;is_prime = <span class="keyword">True</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> d <span class="keyword">in</span> range(2, int(num**0.5)+1):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> num % d == 0:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is_prime = <span class="keyword">False</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> is_prime:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(num, end=<span class="string">" "</span>)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-star"></i> Прямоугольник из звёздочек</h3>
+                <p>Запросите ширину и высоту и нарисуйте прямоугольник из символов '*'.</p>
+                <button class="btn-toggle" onclick="toggleSolution('rect', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="rect" class="code-block" style="display:none; margin-top:15px;">
+                    w = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Ширина: "</span>))<br>
+                    h = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Высота: "</span>))<br>
+                    <span class="keyword">for</span> i <span class="keyword">in</span> range(h):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> j <span class="keyword">in</span> range(w):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"*"</span>, end=<span class="string">""</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>()
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-star"></i> Анализ списка чисел</h3>
+                <p>Найдите минимальное, максимальное и среднее арифметическое в списке (задан заранее или вводится).</p>
+                <button class="btn-toggle" onclick="toggleSolution('liststats', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="liststats" class="code-block" style="display:none; margin-top:15px;">
+                    numbers = [3, 7, 2, 9, 1, 5, 8]<br>
+                    <span class="comment"># или ввод: list(map(int, input().split()))</span><br>
+                    mn = numbers[0]<br>
+                    mx = numbers[0]<br>
+                    total = 0<br>
+                    <span class="keyword">for</span> x <span class="keyword">in</span> numbers:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> x < mn: mn = x<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> x > mx: mx = x<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;total += x<br>
+                    avg = total / len(numbers)<br>
+                    <span class="keyword">print</span>(<span class="string">"Мин:"</span>, mn, <span class="string">"Макс:"</span>, mx, <span class="string">"Сред:"</span>, avg)
+                </div>
+            </div>
+        </div>
+
+        <!-- Итоги урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Сегодня вы освоили:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li>Цикл <code>for</code> для перебора последовательностей</li>
+                    <li>Функцию <code>range()</code> для создания числовых диапазонов</li>
+                    <li>Вложенные циклы для обработки многомерных данных</li>
+                    <li>Управление циклом с помощью <code>break</code> и <code>continue</code></li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главное:</strong> Циклы — это сердце автоматизации. Они позволяют выполнять однотипные операции быстро и без повторения кода.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Выведите все чётные числа от 1 до 50.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Вычислите факториал числа N (произведение чисел от 1 до N).</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 3</h3>
+                <p>Посчитайте количество цифр во введённом целом числе.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 4</h3>
+                <p>Нарисуйте треугольник из символов '*':</p>
+                <div class="code-block">
+                    *<br>
+                    **<br>
+                    ***<br>
+                    ****<br>
+                    *****
+                </div>
+            </div>
+            <button class="botton" onclick="window.location.href='№9.html'">Перейти дальше</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Цикл for и функция range()</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

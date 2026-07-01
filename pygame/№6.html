@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Логические операторы в Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Логические операторы в Python</h1>
+            <p class="subtitle">Научитесь строить сложные условия с помощью and, or и not</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: and -->
+            <div class="card">
+                <h2><i class="fas fa-handshake"></i> Оператор and</h2>
+                <div class="section">
+                    <p>Оператор <strong>and</strong> возвращает <strong>True</strong> только тогда, когда <strong>оба условия истинны</strong>.</p>
+
+                    <h3>Таблица истинности</h3>
+                    <table class="comparison-table" style="margin-bottom:15px;">
+                        <thead><tr><th>A</th><th>B</th><th>A and B</th></tr></thead>
+                        <tbody>
+                            <tr><td>True</td><td>True</td><td><span class="keyword">True</span></td></tr>
+                            <tr><td>True</td><td>False</td><td>False</td></tr>
+                            <tr><td>False</td><td>True</td><td>False</td></tr>
+                            <tr><td>False</td><td>False</td><td>False</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Примеры</h3>
+                    <div class="code-block">
+                        age = 20<br>
+                        has_ticket = <span class="keyword">True</span><br>
+                        if age >= 18 <span class="keyword">and</span> has_ticket:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Доступ разрешён"</span>)
+                    </div>
+                    <p>Проверка попадания числа в диапазон:</p>
+                    <div class="code-block">
+                        x = 5<br>
+                        if x > 0 <span class="keyword">and</span> x < 10:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Число в диапазоне (0, 10)"</span>)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая карточка: or -->
+            <div class="card">
+                <h2><i class="fas fa-code-branch"></i> Оператор or</h2>
+                <div class="section">
+                    <p>Оператор <strong>or</strong> возвращает <strong>True</strong>, если <strong>хотя бы одно условие истинно</strong>.</p>
+
+                    <h3>Таблица истинности</h3>
+                    <table class="comparison-table" style="margin-bottom:15px;">
+                        <thead><tr><th>A</th><th>B</th><th>A or B</th></tr></thead>
+                        <tbody>
+                            <tr><td>True</td><td>True</td><td><span class="keyword">True</span></td></tr>
+                            <tr><td>True</td><td>False</td><td><span class="keyword">True</span></td></tr>
+                            <tr><td>False</td><td>True</td><td><span class="keyword">True</span></td></tr>
+                            <tr><td>False</td><td>False</td><td>False</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Примеры</h3>
+                    <div class="code-block">
+                        day = <span class="string">"суббота"</span><br>
+                        if day == <span class="string">"суббота"</span> <span class="keyword">or</span> day == <span class="string">"воскресенье"</span>:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Выходной!"</span>)
+                    </div>
+                    <p>Проверка на несколько допустимых ответов:</p>
+                    <div class="code-block">
+                        answer = <span class="keyword">input</span>(<span class="string">"Хотите продолжить? (да/yes): "</span>)<br>
+                        if answer == <span class="string">"да"</span> <span class="keyword">or</span> answer == <span class="string">"yes"</span>:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Продолжаем!"</span>)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: not и приоритет -->
+        <div class="card">
+            <h2><i class="fas fa-circle"></i> Оператор not и приоритет операций</h2>
+            <div class="section">
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #f0f8ff; border-color: #5a6dcd;">
+                        <h4><i class="fas fa-times-circle"></i> Оператор not</h4>
+                        <p>Инвертирует булево значение: <strong>not True</strong> даёт <strong>False</strong> и наоборот.</p>
+                        <div class="code-block" style="margin-top:10px;">
+                            is_banned = <span class="keyword">False</span><br>
+                            if <span class="keyword">not</span> is_banned:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Добро пожаловать!"</span>)
+                        </div>
+                        <p style="margin-top:10px;">Удобно, когда нужно проверить отсутствие свойства.</p>
+                    </div>
+                    <div class="lang-box" style="background: #f0f8ff; border-color: #5a6dcd;">
+                        <h4><i class="fas fa-sort-amount-up"></i> Приоритет</h4>
+                        <p>Порядок вычисления логических операторов:</p>
+                        <ol style="padding-left:20px; margin:10px 0;">
+                            <li><code>not</code> – самый высокий</li>
+                            <li><code>and</code></li>
+                            <li><code>or</code></li>
+                        </ol>
+                        <p>Используйте скобки <code>()</code>, чтобы управлять порядком.</p>
+                        <div class="code-block" style="margin-top:10px;">
+                            <span class="comment"># Без скобок: not применяется только к x > 0</span><br>
+                            if <span class="keyword">not</span> x > 0 <span class="keyword">and</span> y > 0:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;...<br><br>
+                            <span class="comment"># Со скобками: явно задаём логику</span><br>
+                            if <span class="keyword">not</span> (x > 0 <span class="keyword">and</span> y > 0):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Проверка диапазона</h3>
+                <p>Запросите число и проверьте, находится ли оно в диапазоне от 10 до 20 включительно.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    num = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Введите число: "</span>))<br>
+                    if num >= 10 <span class="keyword">and</span> num <= 20:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Число в диапазоне [10, 20]"</span>)<br>
+                    else:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Число вне диапазона"</span>)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Високосный год</h3>
+                <p>Год является високосным, если он кратен 4, но не кратен 100, либо кратен 400. Реализуйте проверку.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    year = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Введите год: "</span>))<br>
+                    if (year % 4 == 0 <span class="keyword">and</span> year % 100 != 0) <span class="keyword">or</span> (year % 400 == 0):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Високосный год"</span>)<br>
+                    else:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Не високосный"</span>)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Проверка строки</h3>
+                <p>Запросите строку и определите, пустая ли она. Используйте <code>not</code>.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    text = <span class="keyword">input</span>(<span class="string">"Введите текст: "</span>)<br>
+                    if <span class="keyword">not</span> text:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Вы ничего не ввели"</span>)<br>
+                    else:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Спасибо! Ваш текст:"</span>, text)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 4: Комбинированная проверка</h3>
+                <p>Проверьте, что пользователь ввёл "да" или "yes" (регистр не важен) и при этом он не забанен (переменная banned = False).</p>
+                <button class="btn-toggle" onclick="toggleSolution('task4', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task4" class="code-block" style="display:none; margin-top:15px;">
+                    answer = <span class="keyword">input</span>(<span class="string">"Хотите продолжить? "</span>).lower()<br>
+                    banned = <span class="keyword">False</span><br>
+                    if (answer == <span class="string">"да"</span> <span class="keyword">or</span> answer == <span class="string">"yes"</span>) <span class="keyword">and</span> <span class="keyword">not</span> banned:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Продолжаем работу!"</span>)<br>
+                    else:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Отмена или доступ запрещён"</span>)
+                </div>
+            </div>
+        </div>
+
+        <!-- Итог урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Теперь вы знаете:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li><strong>and</strong> – оба условия истинны</li>
+                    <li><strong>or</strong> – хотя бы одно истинно</li>
+                    <li><strong>not</strong> – инверсия значения</li>
+                    <li>Приоритет операторов и использование скобок</li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная идея:</strong> Логические операторы позволяют делать условия гибкими и точными. Это фундамент для построения сложной логики в ваших программах.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1: Калькулятор доступа</h3>
+                <p>Напишите программу, которая запрашивает возраст и наличие студенческого билета (да/нет). Если возраст от 18 до 25 и есть студенческий, выведите "Скидка 50%". Если возраст больше 60 – "Скидка 30%". Иначе – "Полная стоимость". Используйте <code>and</code>, <code>or</code>.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2: Проверка треугольника</h3>
+                <p>Запросите три стороны треугольника. Треугольник существует, если каждая сторона меньше суммы двух других. Используйте <code>and</code> для проверки всех трёх условий одновременно.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 3: Логическая игра</h3>
+                <p>Придумайте собственную задачу, в которой нужно использовать все три оператора (<code>and</code>, <code>or</code>, <code>not</code>). Напишите её решение и пришлите для проверки.</p>
+            </div>
+            <button class="botton" onclick="window.location.href='№7.html'">Перейти к следующему уроку</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Логические операторы</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

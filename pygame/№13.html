@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Методы строк в Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Методы строк в Python</h1>
+            <p class="subtitle">Освойте встроенные инструменты для обработки текста: регистр, поиск, замена и разбиение</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: upper() и lower() -->
+            <div class="card">
+                <h2><i class="fas fa-font"></i> Регистр: upper() и lower()</h2>
+                <div class="section">
+                    <p>Методы <code>upper()</code> и <code>lower()</code> преобразуют строку в верхний или нижний регистр. Они <strong>не изменяют</strong> исходную строку, а возвращают новую.</p>
+
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <i class="fas fa-arrow-up"></i>
+                            <div class="label">upper()</div>
+                            <small>ВСЕ БУКВЫ БОЛЬШИЕ</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-arrow-down"></i>
+                            <div class="label">lower()</div>
+                            <small>все буквы маленькие</small>
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        text = <span class="string">"Привет Мир"</span><br>
+                        <span class="keyword">print</span>(text.upper())  <span class="comment"># ПРИВЕТ МИР</span><br>
+                        <span class="keyword">print</span>(text.lower())  <span class="comment"># привет мир</span>
+                    </div>
+
+                    <div class="tip-box">
+                        <p><strong>Полезно:</strong> для сравнения без учёта регистра приводите обе строки к одному регистру.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая карточка: find() и replace() -->
+            <div class="card">
+                <h2><i class="fas fa-search"></i> Поиск и замена: find() и replace()</h2>
+                <div class="section">
+                    <p><code>find()</code> ищет подстроку и возвращает индекс первого вхождения (или -1, если не найдено). <code>replace()</code> заменяет все вхождения одной подстроки на другую.</p>
+
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <i class="fas fa-search"></i>
+                            <div class="label">find()</div>
+                            <small>находит индекс подстроки</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-exchange-alt"></i>
+                            <div class="label">replace()</div>
+                            <small>заменяет подстроку</small>
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        s = <span class="string">"Hello World"</span><br>
+                        <span class="keyword">print</span>(s.find(<span class="string">"World"</span>))  <span class="comment"># 6</span><br>
+                        <span class="keyword">print</span>(s.find(<span class="string">"Python"</span>)) <span class="comment"># -1 (не найдено)</span><br><br>
+                        new_s = s.replace(<span class="string">"Hello"</span>, <span class="string">"Привет"</span>)<br>
+                        <span class="keyword">print</span>(new_s)  <span class="comment"># Привет World</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: split() -->
+        <div class="card">
+            <h2><i class="fas fa-cut"></i> Разбиение строки: split()</h2>
+            <div class="section">
+                <p>Метод <code>split()</code> разбивает строку на части по заданному разделителю и возвращает <strong>список</strong> подстрок. По умолчанию разделитель — пробел, а также несколько пробелов подряд.</p>
+
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-code"></i> Базовое использование</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            text = <span class="string">"яблоко банан апельсин"</span><br>
+                            words = text.split()<br>
+                            <span class="keyword">print</span>(words)  <span class="comment"># ['яблоко', 'банан', 'апельсин']</span>
+                        </div>
+                        <p style="margin-top:10px;">Теперь можно обработать каждое слово в цикле.</p>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-cogs"></i> С другим разделителем</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            csv = <span class="string">"Иван,Петров,25"</span><br>
+                            data = csv.split(<span class="string">","</span>)<br>
+                            <span class="keyword">print</span>(data)  <span class="comment"># ['Иван', 'Петров', '25']</span>
+                        </div>
+                        <p style="margin-top:10px;">Удобно для разбора CSV, логов и т.д.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Стандартизация имени</h3>
+                <p>Запросите имя пользователя, которое может быть написано в любом регистре, и выведите его с заглавной буквы (например, "иВАН" → "Иван").</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    name = <span class="keyword">input</span>(<span class="string">"Введите имя: "</span>)<br>
+                    name = name.lower().capitalize()  <span class="comment"># или name[0].upper() + name[1:].lower()</span><br>
+                    <span class="keyword">print</span>(<span class="string">"Привет,"</span>, name)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Поиск слова в предложении</h3>
+                <p>Дано предложение. Проверьте, содержит ли оно слово "Python" (без учёта регистра). Выведите его позицию или сообщение об отсутствии.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    text = <span class="keyword">input</span>(<span class="string">"Введите текст: "</span>)<br>
+                    pos = text.lower().find(<span class="string">"python"</span>)<br>
+                    <span class="keyword">if</span> pos != -1:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Слово 'Python' найдено на позиции"</span>, pos)<br>
+                    <span class="keyword">else</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Слово 'Python' не найдено"</span>)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Замена запрещённых слов</h3>
+                <p>Замените в строке все вхождения слова "плохой" на "хороший". Выведите результат.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    text = <span class="keyword">input</span>(<span class="string">"Введите текст: "</span>)<br>
+                    new_text = text.replace(<span class="string">"плохой"</span>, <span class="string">"хороший"</span>)<br>
+                    <span class="keyword">print</span>(new_text)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 4: Инициалы</h3>
+                <p>Пользователь вводит ФИО (три слова через пробел). Выведите фамилию и инициалы (например, "Иванов И. П.").</p>
+                <button class="btn-toggle" onclick="toggleSolution('task4', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task4" class="code-block" style="display:none; margin-top:15px;">
+                    fio = <span class="keyword">input</span>(<span class="string">"Введите ФИО: "</span>)<br>
+                    parts = fio.split()<br>
+                    <span class="keyword">if</span> len(parts) == 3:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;lastname, firstname, middlename = parts<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;initials = <span class="string">f"{lastname} {firstname[0].upper()}. {middlename[0].upper()}."</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(initials)<br>
+                    <span class="keyword">else</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Введите ровно три слова"</span>)
+                </div>
+            </div>
+        </div>
+
+        <!-- Итоги урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Сегодня вы изучили пять важных методов строк:</p>
+                <div class="adv-grid">
+                    <div class="adv-item">
+                        <i class="fas fa-arrow-up"></i>
+                        <div class="adv-text">upper() / lower()</div>
+                        <p style="font-size:0.85rem;">изменение регистра</p>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-search"></i>
+                        <div class="adv-text">find()</div>
+                        <p style="font-size:0.85rem;">поиск подстроки</p>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <div class="adv-text">replace()</div>
+                        <p style="font-size:0.85rem;">замена текста</p>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-cut"></i>
+                        <div class="adv-text">split()</div>
+                        <p style="font-size:0.85rem;">разбиение на части</p>
+                    </div>
+                </div>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная идея:</strong> Методы строк — это готовые инструменты, которые значительно упрощают обработку текста. Вы будете использовать их постоянно.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Напишите программу, которая удаляет все пробелы в начале и конце введённой строки и приводит её к нижнему регистру. Выведите результат.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Дана строка с числами, разделёнными запятыми: "10,20,30,40". Найдите их сумму. Используйте <code>split()</code> и преобразование в числа.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 3</h3>
+                <p>Пользователь вводит предложение. Подсчитайте, сколько раз в нём встречается слово "Python" (независимо от регистра).</p>
+            </div>
+            <button class="botton" onclick="window.location.href='№14.html'">Перейти дальше</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Методы строк</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

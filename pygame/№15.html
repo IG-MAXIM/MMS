@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Методы списков в Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Методы списков в Python</h1>
+            <p class="subtitle">Изучите встроенные методы для изменения списков: добавление, удаление, сортировка и переворот</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: append и insert -->
+            <div class="card">
+                <h2><i class="fas fa-plus-circle"></i> Добавление элементов</h2>
+                <div class="section">
+                    <p>Методы <code>append()</code> и <code>insert()</code> позволяют расширять список.</p>
+
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="label">append(x)</div>
+                            <small>добавляет x в конец списка</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="label">insert(i, x)</div>
+                            <small>вставляет x на позицию i</small>
+                        </div>
+                    </div>
+
+                    <h3>Примеры</h3>
+                    <div class="code-block">
+                        nums = [1, 2, 3]<br>
+                        nums.append(4)<br>
+                        <span class="keyword">print</span>(nums)  <span class="comment"># [1, 2, 3, 4]</span><br><br>
+                        nums.insert(1, 99)<br>
+                        <span class="keyword">print</span>(nums)  <span class="comment"># [1, 99, 2, 3, 4]</span>
+                    </div>
+
+                    <div class="tip-box">
+                        <p><strong>Важно:</strong> <code>append</code> и <code>insert</code> изменяют список «на месте» и ничего не возвращают (<code>None</code>).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая карточка: remove и pop -->
+            <div class="card">
+                <h2><i class="fas fa-minus-circle"></i> Удаление элементов</h2>
+                <div class="section">
+                    <p>Методы <code>remove()</code> и <code>pop()</code> удаляют элементы из списка.</p>
+
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <i class="fas fa-times"></i>
+                            <div class="label">remove(x)</div>
+                            <small>удаляет первое вхождение x</small>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-trash-alt"></i>
+                            <div class="label">pop(i)</div>
+                            <small>удаляет и возвращает элемент по индексу i (по умолчанию последний)</small>
+                        </div>
+                    </div>
+
+                    <h3>Примеры</h3>
+                    <div class="code-block">
+                        lst = [10, 20, 30, 20]<br>
+                        lst.remove(20)  <span class="comment"># удаляет первый 20</span><br>
+                        <span class="keyword">print</span>(lst)  <span class="comment"># [10, 30, 20]</span><br><br>
+                        n = lst.pop(1)  <span class="comment"># удаляет и возвращает 30</span><br>
+                        <span class="keyword">print</span>(lst)  <span class="comment"># [10, 20]</span><br>
+                        <span class="keyword">print</span>(n)    <span class="comment"># 30</span>
+                    </div>
+
+                    <div class="error-box">
+                        <h4>Осторожно!</h4>
+                        <p><code>remove(x)</code> вызывает ошибку <code>ValueError</code>, если элемент не найден. Проверяйте наличие через <code>in</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: sort и reverse -->
+        <div class="card">
+            <h2><i class="fas fa-sort-amount-up"></i> Сортировка и переворот: sort() и reverse()</h2>
+            <div class="section">
+                <p>Метод <code>sort()</code> сортирует список по возрастанию (по умолчанию), а <code>reverse()</code> меняет порядок элементов на обратный.</p>
+
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-sort-alpha-down"></i> sort()</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            nums = [5, 2, 8, 1]<br>
+                            nums.sort()<br>
+                            <span class="keyword">print</span>(nums)  <span class="comment"># [1, 2, 5, 8]</span><br><br>
+                            <span class="comment"># По убыванию</span><br>
+                            nums.sort(reverse=True)<br>
+                            <span class="keyword">print</span>(nums)  <span class="comment"># [8, 5, 2, 1]</span>
+                        </div>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-exchange-alt"></i> reverse()</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            words = [<span class="string">"А"</span>, <span class="string">"Б"</span>, <span class="string">"В"</span>]<br>
+                            words.reverse()<br>
+                            <span class="keyword">print</span>(words)  <span class="comment"># ["В", "Б", "А"]</span>
+                        </div>
+                        <p style="margin-top:10px;">В отличие от среза <code>[::-1]</code>, <code>reverse()</code> тоже изменяет сам список.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Список дел</h3>
+                <p>Создайте пустой список дел (<code>tasks</code>). Добавьте в него три задачи с помощью <code>append()</code>, затем вставьте ещё одну задачу в начало с помощью <code>insert()</code>. Выведите итоговый список.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    tasks = []<br>
+                    tasks.append(<span class="string">"Погулять"</span>)<br>
+                    tasks.append(<span class="string">"Сделать уроки"</span>)<br>
+                    tasks.append(<span class="string">"Приготовить ужин"</span>)<br>
+                    tasks.insert(0, <span class="string">"Проснуться"</span>)<br>
+                    <span class="keyword">print</span>(tasks)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Удаление по значению</h3>
+                <p>Дан список <code>[7, 2, 7, 4, 7]</code>. Удалите все вхождения числа 7, используя цикл и <code>remove()</code>. (Подсказка: используйте <code>while 7 in lst:</code>)</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    lst = [7, 2, 7, 4, 7]<br>
+                    <span class="keyword">while</span> 7 <span class="keyword">in</span> lst:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;lst.remove(7)<br>
+                    <span class="keyword">print</span>(lst)  <span class="comment"># [2, 4]</span>
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Стек через pop</h3>
+                <p>Создайте список из трёх чисел. Используя <code>pop()</code> без аргументов, извлеките все элементы по очереди и выведите их. Обратите внимание на порядок извлечения.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    stack = [1, 2, 3]<br>
+                    <span class="keyword">while</span> len(stack) > 0:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(stack.pop())<br>
+                    <span class="comment"># Выведет: 3, 2, 1<br># (последний пришёл — первый ушёл)</span>
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 4: Рейтинг имён</h3>
+                <p>Дан список имён <code>["Мария", "Алексей", "Елена"]</code>. Отсортируйте его по алфавиту и выведите. Затем переверните список и выведите снова.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task4', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task4" class="code-block" style="display:none; margin-top:15px;">
+                    names = [<span class="string">"Мария"</span>, <span class="string">"Алексей"</span>, <span class="string">"Елена"</span>]<br>
+                    names.sort()<br>
+                    <span class="keyword">print</span>(<span class="string">"По алфавиту:"</span>, names)<br>
+                    names.reverse()<br>
+                    <span class="keyword">print</span>(<span class="string">"В обратном порядке:"</span>, names)
+                </div>
+            </div>
+        </div>
+
+        <!-- Итоги урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Сегодня вы освоили методы списков:</p>
+                <div class="adv-grid">
+                    <div class="adv-item">
+                        <i class="fas fa-plus-circle"></i>
+                        <div class="adv-text">append() / insert()</div>
+                        <p style="font-size:0.85rem;">добавление элементов</p>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-minus-circle"></i>
+                        <div class="adv-text">remove() / pop()</div>
+                        <p style="font-size:0.85rem;">удаление элементов</p>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-sort-amount-up"></i>
+                        <div class="adv-text">sort()</div>
+                        <p style="font-size:0.85rem;">сортировка списка</p>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <div class="adv-text">reverse()</div>
+                        <p style="font-size:0.85rem;">переворот порядка</p>
+                    </div>
+                </div>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная идея:</strong> Методы списков — мощный инструмент для управления данными. Сочетая их с циклами и условиями, можно реализовать сложную логику обработки.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Напишите программу, которая запрашивает у пользователя 5 чисел, добавляет их в список, затем сортирует и выводит отсортированный список.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Реализуйте простой «список покупок» с меню: пользователь может добавить товар, удалить товар (по названию) или вывести весь список. Используйте <code>append()</code>, <code>remove()</code> и цикл <code>while</code>.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 3*</h3>
+                <p>Создайте два списка одинаковой длины. С помощью <code>pop()</code> и <code>append()</code> объедините их в один список по принципу «чередования» элементов. Например: [1,2,3] и ['a','b','c'] → [1, 'a', 2, 'b', 3, 'c'].</p>
+            </div>
+            <button class="botton" onclick="window.location.href='№16.html'">Перейти дальше</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Методы списков</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
