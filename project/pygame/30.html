@@ -1,0 +1,212 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Модули и библиотеки Python: модуль math</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Модули и библиотеки Python</h1>
+            <p class="subtitle">Расширьте возможности языка: научитесь подключать готовые инструменты на примере модуля <code>math</code></p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: что такое модуль -->
+            <div class="card">
+                <h2><i class="fas fa-puzzle-piece"></i> Что такое модуль?</h2>
+                <div class="section">
+                    <p><strong>Модуль</strong> — это файл с кодом Python (расширение <code>.py</code>), который можно подключить к своей программе и использовать написанные в нём функции, классы и переменные.</p>
+                    <p><strong>Библиотека</strong> — это набор модулей, объединённых общей темой (например, математические операции, работа с графикой).</p>
+                    <div class="analogy">
+                        <div class="analogy-item">
+                            <i class="fas fa-toolbox"></i>
+                            <strong>Модуль = Ящик с инструментами</strong>
+                            <small>Открыл — и пользуешься готовыми функциями</small>
+                        </div>
+                    </div>
+                    <p>Python поставляется с большой <strong>стандартной библиотекой</strong>: <code>math</code>, <code>random</code>, <code>datetime</code> и многими другими. Их не нужно устанавливать отдельно.</p>
+                </div>
+            </div>
+
+            <!-- Правая карточка: импорт модуля -->
+            <div class="card">
+                <h2><i class="fas fa-download"></i> Импорт модуля</h2>
+                <div class="section">
+                    <p>Чтобы использовать модуль, его нужно <strong>импортировать</strong> с помощью ключевого слова <code>import</code>.</p>
+                    <div class="code-block">
+                        <span class="keyword">import</span> math  <span class="comment"># Импорт всего модуля</span><br>
+                        <span class="keyword">print</span>(math.sqrt(25))  <span class="comment"># 5.0</span>
+                    </div>
+                    <p>Можно импортировать только нужные функции:</p>
+                    <div class="code-block">
+                        <span class="keyword">from</span> math <span class="keyword">import</span> sqrt, pi<br>
+                        <span class="keyword">print</span>(sqrt(16))  <span class="comment"># 4.0</span><br>
+                        <span class="keyword">print</span>(pi)        <span class="comment"># 3.1415926535...</span>
+                    </div>
+                    <p>Или дать модулю короткое имя (псевдоним):</p>
+                    <div class="code-block">
+                        <span class="keyword">import</span> math <span class="keyword">as</span> m<br>
+                        <span class="keyword">print</span>(m.cos(0))  <span class="comment"># 1.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: основные функции и константы math -->
+        <div class="card">
+            <h2><i class="fas fa-square-root-alt"></i> Модуль math: главные функции и константы</h2>
+            <div class="section">
+                <p><code>math</code> предоставляет математические функции и константы. Вот самые популярные из них:</p>
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-calculator"></i> Функции</h4>
+                        <ul style="padding-left:18px;">
+                            <li><code>sqrt(x)</code> — квадратный корень</li>
+                            <li><code>ceil(x)</code> — округление вверх</li>
+                            <li><code>floor(x)</code> — округление вниз</li>
+                            <li><code>sin(x)</code>, <code>cos(x)</code> — синус/косинус (угол в радианах)</li>
+                            <li><code>radians(x)</code> — перевод градусов в радианы</li>
+                            <li><code>pow(x, y)</code> — x в степени y</li>
+                            <li><code>fabs(x)</code> — модуль (абсолютное значение) числа</li>
+                        </ul>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-circle"></i> Константы</h4>
+                        <ul style="padding-left:18px;">
+                            <li><code>pi</code> — число π (3.141592...)</li>
+                            <li><code>e</code> — число Эйлера (2.718281...)</li>
+                            <li><code>tau</code> — число τ = 2π (6.283185...)</li>
+                            <li><code>inf</code> — бесконечность</li>
+                        </ul>
+                        <p>Константы используются как обычные переменные: <code>2 * math.pi * r</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Квадратный корень</h3>
+                <p>Запросите у пользователя число и выведите его квадратный корень с помощью <code>math.sqrt()</code>. Если число отрицательное, выведите сообщение об ошибке.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">import</span> math<br>
+                    x = <span class="keyword">float</span>(<span class="keyword">input</span>(<span class="string">"Введите число: "</span>))<br>
+                    <span class="keyword">if</span> x >= 0:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Корень:"</span>, math.sqrt(x))<br>
+                    <span class="keyword">else</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Ошибка: нельзя извлечь корень из отрицательного числа"</span>)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Площадь круга</h3>
+                <p>Запросите радиус круга и вычислите его площадь по формуле <code>π * r²</code>. Используйте <code>math.pi</code> и <code>math.pow()</code>.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">import</span> math<br>
+                    r = <span class="keyword">float</span>(<span class="keyword">input</span>(<span class="string">"Радиус: "</span>))<br>
+                    area = math.pi * math.pow(r, 2)<br>
+                    <span class="keyword">print</span>(<span class="string">"Площадь круга:"</span>, round(area, 2))
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Округление</h3>
+                <p>Дано число 4.3. Выведите его округление вверх (ceil) и вниз (floor). Объясните разницу.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">from</span> math <span class="keyword">import</span> ceil, floor<br>
+                    num = 4.3<br>
+                    <span class="keyword">print</span>(<span class="string">"ceil:"</span>, ceil(num))   <span class="comment"># 5</span><br>
+                    <span class="keyword">print</span>(<span class="string">"floor:"</span>, floor(num)) <span class="comment"># 4</span>
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 4: Синус угла</h3>
+                <p>Запросите угол в градусах, переведите в радианы с помощью <code>math.radians()</code> и вычислите его синус.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task4', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task4" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">import</span> math<br>
+                    deg = <span class="keyword">float</span>(<span class="keyword">input</span>(<span class="string">"Угол в градусах: "</span>))<br>
+                    rad = math.radians(deg)<br>
+                    <span class="keyword">print</span>(<span class="string">"Синус:"</span>, round(math.sin(rad), 4))
+                </div>
+            </div>
+        </div>
+
+        <!-- Итоги урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Сегодня вы узнали:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li>Что такое модуль и библиотека, зачем они нужны</li>
+                    <li>Как импортировать модуль: <code>import</code>, <code>from ... import</code>, псевдонимы</li>
+                    <li>Основные функции модуля <code>math</code>: <code>sqrt</code>, <code>ceil</code>, <code>floor</code>, <code>sin</code>, <code>pow</code></li>
+                    <li>Математические константы: <code>pi</code>, <code>e</code></li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главное:</strong> Модули — это готовая сила. Вместо того чтобы писать всё с нуля, вы можете использовать проверенные инструменты. В Python сотни модулей, и теперь вы знаете, как их подключить.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Напишите программу, которая запрашивает катеты прямоугольного треугольника и вычисляет гипотенузу (используйте <code>math.sqrt</code>).</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Создайте программу «Калькулятор площади геометрических фигур»: пользователь выбирает фигуру (круг, квадрат, треугольник), вводит параметры и получает площадь. Используйте <code>math.pi</code>, <code>math.pow</code> и другие функции.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 3</h3>
+                <p>Изучите самостоятельно другой модуль стандартной библиотеки (например, <code>random</code> или <code>datetime</code>) и напишите небольшую программу, демонстрирующую его возможности. Опишите, что делает программа.</p>
+            </div>
+            <button class="botton" onclick="window.location.href='python_basics.html'">Перейти дальше</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Модули и библиотеки: модуль math</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

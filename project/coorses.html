@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Курсы</title>
+    <link rel="stylesheet" href="style_common.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+    <style>
+        /* Восстанавливаем оригинальный вид карточек (как было) */
+        body {
+            background: url('main_p.jpg') no-repeat !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+        .content {
+            position: relative !important;
+            top: 25px !important;
+            left: 15% !important;
+            font-size: 2em !important;
+            letter-spacing: 10px !important;
+            padding-right: 5% !important;
+            width: 1140px !important;
+            max-width: 80% !important;
+            overflow: hidden !important;
+            box-sizing: border-box !important;
+            color: #ffff !important;
+            font-weight: bold !important;
+            line-height: 1.5em !important;
+        }
+        section {
+            display: flex !important;
+            align-items: center !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+        }
+        .card { 
+            --color: #24396B;
+            --border-size: 1rem;
+            --bg-color: #5E86BA;
+            position: relative !important;
+            left: 0% !important;
+            top: 0px !important;
+            background-color: var(--bg-color) !important;
+            width: 560px !important;
+            height: 560px !important;
+            margin: 2rem !important;
+            border-radius: var(--border-size) !important;
+            color: white !important;
+            display: grid !important;
+            padding: 3rem 2rem !important;
+            isolation: isolate !important;
+            overflow: hidden !important;
+        }
+        .card::before, .card::after {
+            content: "" !important;
+            position: absolute !important;
+        }
+        .card::before {
+            width: 200% !important;
+            height: 200% !important;
+            background-image: conic-gradient(var(--color) 0deg, transparent 60deg, transparent 180deg, var(--color) 180deg, transparent 240deg) !important;
+            inset: -50% !important;
+            z-index: -2 !important;
+            animation: border 8s linear infinite !important;
+        }
+        .card:hover::before {
+            animation-play-state: paused !important;
+        }
+        @keyframes border {
+            to { transform: rotateZ(-360deg); }
+        }
+        .card::after {
+            --inset: 0.25rem !important;
+            background-color: #8DACD8 !important;
+            inset: var(--inset) !important;
+            border-radius: calc(var(--border-size) - var(--inset)) !important;
+            z-index: -1 !important;
+            transition: all 0.35s linear !important;
+        }
+        .card:hover::after {
+            background-color: var(--bg-color) !important;
+        }
+        .card i {
+            font-size: 5rem !important;
+            margin-inline: auto !important;
+            color: transparent !important;
+            -webkit-text-stroke: thin var(--color) !important;
+        }
+        .card:hover i {
+            color: var(--color) !important;
+            -webkit-text-stroke-width: 0 !important;
+        }
+        .card .title {
+            text-align: center !important;
+            font-size: 2.5rem !important;
+            line-height: 2.875rem !important;
+            margin-block: 1.5rem 1.5rem !important;
+            color: var(--color) !important;
+        }
+        .card .detail {
+            font-size: 1.5rem !important;
+            line-height: 1.5rem !important;
+            text-align: center !important;
+            opacity: 0.75 !important;
+        }
+        .card .detail a {
+            font-weight: bold !important;
+            color: #ffff !important;
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item"><a href="index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a></li>
+            <li class="list-item active"><a href="#"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a></li>
+            <li class="list-item"><a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a></li>
+            <li class="list-item"><a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="main-wrapper">
+        <div class="content">
+            <div class="title">MMS</div>
+            <div class="des">Вы можете изучить данные курсы</div>
+        </div>
+        <section>
+            <div class="card">
+                <i class="fab fa-python"></i>
+                <div class="title">Разработка игр на языке программирования Python</div>
+                <div class="detail"><a href="coors_pygame.html">Перейти к курсу</a></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

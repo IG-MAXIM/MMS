@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Условные операторы в Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Условные операторы в Python</h1>
+            <p class="subtitle">Научитесь управлять ходом программы с помощью if, elif и else</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: if -->
+            <div class="card">
+                <h2><i class="fas fa-code"></i> Оператор if</h2>
+                <div class="section">
+                    <p><strong>if</strong> выполняет блок кода только тогда, когда условие истинно.</p>
+
+                    <h3>Синтаксис</h3>
+                    <div class="code-block">
+                        if условие:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;действие
+                    </div>
+
+                    <div class="tip-box">
+                        <p><strong>Важно:</strong> после условия ставится двоеточие, а вложенный код пишется с отступом (4 пробела).</p>
+                    </div>
+
+                    <h3>Пример</h3>
+                    <div class="code-block">
+                        age = 18<br>
+                        if age >= 18:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Вы совершеннолетний"</span>)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая карточка: if-else -->
+            <div class="card">
+                <h2><i class="fas fa-exchange-alt"></i> Оператор if-else</h2>
+                <div class="section">
+                    <p><strong>if-else</strong> задаёт два пути: один, когда условие истинно, и другой — когда ложно.</p>
+
+                    <h3>Синтаксис</h3>
+                    <div class="code-block">
+                        if условие:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;действие_если_True<br>
+                        else:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;действие_если_False
+                    </div>
+
+                    <h3>Пример: чётность числа</h3>
+                    <div class="code-block">
+                        n = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Число: "</span>))<br>
+                        if n % 2 == 0:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Чётное"</span>)<br>
+                        else:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Нечётное"</span>)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка: if-elif-else (на всю ширину) -->
+        <div class="card">
+            <h2><i class="fas fa-sitemap"></i> Оператор if-elif-else</h2>
+            <div class="section">
+                <p>Когда нужно проверить несколько условий, используют цепочку <strong>if-elif-else</strong>. Python проверяет условия по порядку и выполняет первый подошедший блок.</p>
+
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-list-ol"></i> Синтаксис</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            if условие_1:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                            elif условие_2:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                            elif условие_3:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                            else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;... <span class="comment"># если ни одно не подошло</span>
+                        </div>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-lightbulb"></i> Пример: система оценок</h4>
+                        <div class="code-block" style="margin-top:10px;">
+                            score = 85<br>
+                            if score >= 90:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"A"</span>)<br>
+                            elif score >= 80:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"B"</span>)<br>
+                            elif score >= 70:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"C"</span>)<br>
+                            else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Ниже C"</span>)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Проверка знака числа</h3>
+                <p>Запросите число и выведите: «положительное», «отрицательное» или «ноль».</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    num = <span class="keyword">float</span>(<span class="keyword">input</span>(<span class="string">"Введите число: "</span>))<br>
+                    if num > 0:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Положительное"</span>)<br>
+                    elif num < 0:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Отрицательное"</span>)<br>
+                    else:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Это ноль!"</span>)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Калькулятор скидки</h3>
+                <p>Сумма покупки больше 1000 — скидка 10%, от 500 до 1000 — 5%, иначе скидки нет.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    purchase = <span class="keyword">float</span>(<span class="keyword">input</span>(<span class="string">"Сумма покупки: "</span>))<br>
+                    if purchase > 1000:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;discount = 0.10<br>
+                    elif purchase >= 500:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;discount = 0.05<br>
+                    else:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;discount = 0<br><br>
+                    final = purchase * (1 - discount)<br>
+                    <span class="keyword">print</span>(<span class="string">f"Итоговая сумма: {final}"</span>)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Вход в систему</h3>
+                <p>Проверьте логин и пароль (например, admin / qwerty).</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    login = <span class="keyword">input</span>(<span class="string">"Логин: "</span>)<br>
+                    if login == "admin":<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;password = <span class="keyword">input</span>(<span class="string">"Пароль: "</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if password == "qwerty":<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Доступ разрешён"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Неверный пароль"</span>)<br>
+                    else:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Пользователь не найден"</span>)
+                </div>
+            </div>
+        </div>
+
+        <!-- Итог урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Теперь вы знаете:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li><strong>if</strong> – выполнение кода по условию</li>
+                    <li><strong>if-else</strong> – две ветки развития программы</li>
+                    <li><strong>if-elif-else</strong> – многовариантный выбор</li>
+                    <li>Как проверять равенство (<code>==</code>), сравнения (<code>&gt;</code>, <code>&lt;</code>) и комбинировать условия</li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная идея:</strong> Условные операторы дают программе «интеллект». Они позволяют принимать решения и реагировать на разные ситуации.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание: Определитель времени года</h3>
+                <p>Запросите номер месяца (1–12) и выведите время года:</p>
+                <ul style="padding-left:20px; margin:10px 0;">
+                    <li>3,4,5 — весна</li>
+                    <li>6,7,8 — лето</li>
+                    <li>9,10,11 — осень</li>
+                    <li>12,1,2 — зима</li>
+                </ul>
+                <p><strong>Требования:</strong> используйте if-elif-else, обработайте неверный номер месяца.</p>
+            </div>
+            <button class="botton" onclick="window.location.href='python_basics.html'">Перейти к следующему уроку</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Условные операторы</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

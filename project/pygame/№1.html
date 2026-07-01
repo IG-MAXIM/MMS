@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Введение в Python</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Введение в программирование на Python</h1>
+            <p class="subtitle">Изучите основы формальных языков и познакомьтесь с языком программирования Python</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: Формальные языки + Преимущества -->
+            <div class="card">
+                <h2><i class="fas fa-language"></i> Формальные языки</h2>
+                <div class="section">
+                    <p><strong>Формальный язык</strong> — это искусственно созданный язык со строгими синтаксисом и семантикой, используемый в математике, логике и компьютерных науках. Он исключает неоднозначности.</p>
+
+                    <!-- Характеристики в ряд -->
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <i class="fas fa-code"></i>
+                            <div class="label">Синтаксис</div>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-brain"></i>
+                            <div class="label">Семантика</div>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-font"></i>
+                            <div class="label">Алфавит</div>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-sitemap"></i>
+                            <div class="label">Грамматика</div>
+                        </div>
+                    </div>
+
+                    <!-- Сравнение формальных и естественных языков -->
+                    <div class="lang-compare">
+                        <div class="lang-box box-chaos">
+                            <h4><i class="fas fa-robot"></i> Формальные языки</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Строгие правила</li>
+                                <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Однозначная интерпретация</li>
+                                <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Используются в математике и программировании</li>
+                                <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 8px;"></i>Примеры: Python, Java, логика</li>
+                            </ul>
+                        </div>
+                        <div class="lang-box box-order">
+                            <h4><i class="fas fa-comments"></i> Естественные языки</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle" style="color: #2e7d32; margin-right: 8px;"></i>Гибкие правила</li>
+                                <li><i class="fas fa-check-circle" style="color: #2e7d32; margin-right: 8px;"></i>Многозначность и контекстность</li>
+                                <li><i class="fas fa-check-circle" style="color: #2e7d32; margin-right: 8px;"></i>Естественное развитие</li>
+                                <li><i class="fas fa-check-circle" style="color: #2e7d32; margin-right: 8px;"></i>Примеры: русский, английский, испанский</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Преимущества Python -->
+                    <h3 style="margin-top: 25px;"><i class="fas fa-star"></i> Преимущества Python</h3>
+                    <div class="adv-grid">
+                        <div class="adv-item">
+                            <i class="fas fa-feather-alt"></i>
+                            <div class="adv-text">Простой и читаемый синтаксис</div>
+                        </div>
+                        <div class="adv-item">
+                            <i class="fas fa-desktop"></i>
+                            <div class="adv-text">Кроссплатформенность</div>
+                        </div>
+                        <div class="adv-item">
+                            <i class="fas fa-users"></i>
+                            <div class="adv-text">Огромное сообщество и библиотеки</div>
+                        </div>
+                        <div class="adv-item">
+                            <i class="fas fa-seedling"></i>
+                            <div class="adv-text">Подходит для начинающих</div>
+                        </div>
+                        <div class="adv-item">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <div class="adv-text">Широкий спектр применения</div>
+                        </div>
+                        <div class="adv-item">
+                            <i class="fas fa-lock-open"></i>
+                            <div class="adv-text">Бесплатный и с открытым исходным кодом</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая карточка: Язык Python -->
+            <div class="card">
+                <h2><i class="fab fa-python"></i> Язык программирования Python</h2>
+                <div class="section">
+                    <h3>История создания</h3>
+                    <p>Python создан в 1989–1991 годах <strong>Гвидо ван Россумом</strong>. Вдохновлён проектом ABC, учёл важность обратной связи и сообщества.</p>
+                    
+                    <!-- Временная шкала -->
+                    <div style="position:relative; padding-left:25px; border-left:3px solid var(--accent); margin:20px 0;">
+                        <div style="margin-bottom:15px;">
+                            <i class="fas fa-circle" style="color:var(--accent); font-size:0.6rem; position:absolute; left:-6px; margin-top:5px;"></i>
+                            <strong style="color:var(--primary);">1989</strong> — Начало разработки Python
+                        </div>
+                        <div style="margin-bottom:15px;">
+                            <i class="fas fa-circle" style="color:var(--accent); font-size:0.6rem; position:absolute; left:-6px; margin-top:5px;"></i>
+                            <strong style="color:var(--primary);">20 февраля 1991</strong> — Первая публичная версия
+                        </div>
+                        <div style="margin-bottom:15px;">
+                            <i class="fas fa-circle" style="color:var(--accent); font-size:0.6rem; position:absolute; left:-6px; margin-top:5px;"></i>
+                            <strong style="color:var(--primary);">2000</strong> — Python 2.0 с поддержкой Unicode
+                        </div>
+                        <div style="margin-bottom:15px;">
+                            <i class="fas fa-circle" style="color:var(--accent); font-size:0.6rem; position:absolute; left:-6px; margin-top:5px;"></i>
+                            <strong style="color:var(--primary);">2008</strong> — Python 3.0 (несовместим с Python 2)
+                        </div>
+                        <div>
+                            <i class="fas fa-circle" style="color:var(--accent); font-size:0.6rem; position:absolute; left:-6px; margin-top:5px;"></i>
+                            <strong style="color:var(--primary);">2020</strong> — Окончание поддержки Python 2.7
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3>Особенности Python</h3>
+                    <p>Высокоуровневый, интерпретируемый, с читаемым синтаксисом.</p>
+                    
+                    <!-- Схема интерпретатора -->
+                    <div class="interpreter-flow">
+                        <div class="step-item">
+                            <i class="fas fa-cogs"></i>
+                            <strong>Инициализация</strong>
+                            <p>проверка синтаксиса</p>
+                        </div>
+                        <i class="fas fa-chevron-right flow-arrow"></i>
+                        <div class="step-item">
+                            <i class="fas fa-code"></i>
+                            <strong>Компиляция</strong>
+                            <p>перевод в байт-код</p>
+                        </div>
+                        <i class="fas fa-chevron-right flow-arrow"></i>
+                        <div class="step-item">
+                            <i class="fas fa-play"></i>
+                            <strong>Выполнение</strong>
+                            <p>запуск на виртуальной машине Python (PVM)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3>Применение Python</h3>
+                    <div class="use-grid">
+                        <div class="use-card">
+                            <i class="fas fa-chart-line"></i>
+                            <strong>Data Science</strong>
+                            <p>Машинное обучение, аналитика, визуализация данных</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-globe"></i>
+                            <strong>Веб-разработка</strong>
+                            <p>Django, Flask, создание API и веб-приложений</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-robot"></i>
+                            <strong>Автоматизация</strong>
+                            <p>Скрипты, парсинг данных, боты</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-gamepad"></i>
+                            <strong>Разработка игр</strong>
+                            <p>Pygame, создание 2D игр и прототипов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Картинка с подписью -->
+        <div class="card" style="text-align:center;">
+            <h1><i class="fas fa-language"></i> Формальные языки</h1>
+            <img src="языки.png" alt="Диаграмма формальных языков"
+                 style="max-width: 600px; width: 100%; display: block; margin: 0 auto; border-radius: 10px; box-shadow: var(--shadow);">
+        </div>
+
+        <!-- Интересные факты -->
+        <div class="card">
+            <h2><i class="fas fa-lightbulb"></i> Интересные факты</h2>
+            <div class="section">
+                <ol style="padding-left:20px; margin:15px 0;">
+                    <li>Python назван в честь шоу "Летающий цирк Монти Пайтона", а не змеи.</li>
+                    <li>Марсоходы NASA используют Python для управления.</li>
+                    <li>Многие родители предпочитают Python второму иностранному языку для детей.</li>
+                    <li>YouTube, Instagram и Spotify частично написаны на Python.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-download"></i> Первый шаг — установка Python</h2>
+            <div class="homework-item">
+                <h3>Инструкция для Windows</h3>
+                <div class="code-block">
+                    <span class="comment"># Для Windows:</span><br>
+                    1. Скачайте Python с python.org<br>
+                    2. Запустите установщик<br>
+                    3. Отметьте "Add Python to PATH"<br>
+                    4. Нажмите "Install Now"<br><br>
+                    <span class="comment"># Проверка установки:</span><br>
+                    Откройте командную строку и введите:<br>
+                    python --version<br>
+                    <span class="comment"># Должна появиться версия Python</span>
+                </div>
+            </div>
+            <button class="botton" onclick="window.location.href='python_basics.html'">Перейти к следующему уроку</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Введение в формальные языки и Python</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

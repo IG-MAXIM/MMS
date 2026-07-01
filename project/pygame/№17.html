@@ -1,0 +1,220 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Проект «Анализатор текста»</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Проект «Анализатор текста»</h1>
+            <p class="subtitle">Итоговый проект по обработке строк и списков: создайте программу, которая исследует текст и выдаёт полезную статистику</p>
+        </header>
+
+        <!-- Постановка задачи -->
+        <div class="card">
+            <h2><i class="fas fa-book-open"></i> Постановка задачи</h2>
+            <div class="section">
+                <p>Вы разрабатываете консольный <strong>анализатор текста</strong> — программу, которая принимает от пользователя произвольный текст и выводит его характеристики.</p>
+                
+                <div class="explanation">
+                    <h4>Обязательный минимум</h4>
+                    <p>Программа должна вывести не менее <strong>четырёх</strong> различных показателей текста. Например:</p>
+                    <ul style="padding-left:20px; margin:10px 0;">
+                        <li>Количество символов (с пробелами / без пробелов)</li>
+                        <li>Количество слов</li>
+                        <li>Количество предложений</li>
+                        <li>Самое частое слово (если таких несколько — любое)</li>
+                    </ul>
+                    <p>Вы можете добавить и другие метрики: самое длинное/короткое слово, среднюю длину слова, количество знаков препинания и т.д.</p>
+                </div>
+
+                <h3>Сценарий работы</h3>
+                <ol style="padding-left:20px; margin:10px 0;">
+                    <li>Пользователь вводит текст (можно многострочный — на ваше усмотрение).</li>
+                    <li>Программа обрабатывает текст и выводит статистику в читаемом виде.</li>
+                    <li>После вывода программа может спросить, не хочет ли пользователь проанализировать другой текст, или завершиться.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Требования к реализации -->
+        <div class="card">
+            <h2><i class="fas fa-clipboard-list"></i> Требования к реализации</h2>
+            <div class="section">
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-code"></i> Технические требования</h4>
+                        <ul style="margin:0; padding-left:18px;">
+                            <li>Использовать <strong>строковые методы</strong> (<code>split()</code>, <code>lower()</code>, <code>replace()</code>, <code>find()</code>, <code>count()</code> и др.)</li>
+                            <li>Применять <strong>списки</strong> и <strong>циклы</strong> для обработки слов</li>
+                            <li>Обрабатывать пустой ввод (выводить сообщение «Текст пуст» и завершать или запрашивать снова)</li>
+                            <li>Код должен быть разбит на логические блоки (ввод, обработка, вывод) с комментариями</li>
+                            <li>Не использовать готовые функции для статистики текста из сторонних библиотек — всё пишем сами</li>
+                        </ul>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-star"></i> Критерии качества</h4>
+                        <ul style="margin:0; padding-left:18px;">
+                            <li>Понятный интерфейс: подсказки, что вводить</li>
+                            <li>Результаты выводятся с пояснениями</li>
+                            <li>Программа не завершается с ошибкой при нестандартном вводе (знаки препинания, лишние пробелы, пустые строки)</li>
+                            <li>Код аккуратно отформатирован, переменные названы осмысленно</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Пример реализации (идея) -->
+        <div class="card">
+            <h2><i class="fas fa-lightbulb"></i> Пример идеи и кода</h2>
+            <div class="section">
+                <p>Ниже показан возможный подход к решению. Он не является обязательным, но поможет начать.</p>
+                <button class="btn-toggle" onclick="toggleSolution('exampleCode', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать пример кода" data-hide-text="Скрыть пример"><i class="fas fa-eye"></i> <span>Показать пример кода</span></button>
+                <div id="exampleCode" class="code-block" style="display:none; margin-top:15px;">
+                    text = <span class="keyword">input</span>(<span class="string">"Введите текст: "</span>)<br>
+                    <span class="keyword">if</span> text.strip() == <span class="string">""</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Текст пуст, анализ невозможен."</span>)<br>
+                    <span class="keyword">else</span>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Символы</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;chars_total = len(text)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;chars_no_spaces = len(text.replace(<span class="string">" "</span>, <span class="string">""</span>))<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Символов (с пробелами):"</span>, chars_total)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Символов (без пробелов):"</span>, chars_no_spaces)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Слова</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;words = text.split()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Количество слов:"</span>, len(words))<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Предложения (грубая оценка по точкам, воскл. и вопр. знакам)</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;sentences = text.replace(<span class="string">"!"</span>, <span class="string">"."</span>).replace(<span class="string">"?"</span>, <span class="string">"."</span>).split(<span class="string">"."</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;sentences = [s <span class="keyword">for</span> s <span class="keyword">in</span> sentences <span class="keyword">if</span> s.strip() != <span class="string">""</span>]<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Количество предложений:"</span>, len(sentences))<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Самое частое слово</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;freq = {}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> w <span class="keyword">in</span> words:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w = w.lower().strip(<span class="string">".,!?;:()"</span>)  <span class="comment"># убираем знаки препинания</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> w:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;freq[w] = freq.get(w, 0) + 1<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> freq:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top_word = max(freq, key=freq.get)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Самое частое слово:"</span>, top_word, <span class="string">"("</span>, freq[top_word], <span class="string">"раз)"</span>)
+                </div>
+                <p>Этот пример показывает базовые метрики. Вы можете добавить поиск самого длинного/короткого слова, подсчет уникальных слов и многое другое.</p>
+            </div>
+        </div>
+
+        <!-- Чеклист перед сдачей -->
+        <div class="card">
+            <h2><i class="fas fa-check-double"></i> Чеклист перед сдачей</h2>
+            <div class="section">
+                <p>Перед отправкой проекта убедитесь, что:</p>
+                
+                <div class="task">
+                    <h3><i class="fas fa-check-circle"></i> Функциональность</h3>
+                    <ul style="padding-left:20px;">
+                        <li>Программа корректно работает с обычным текстом</li>
+                        <li>Пустой ввод обрабатывается без ошибок</li>
+                        <li>Текст со знаками препинания не ломает подсчёт слов</li>
+                        <li>Минимум 4 характеристики выводятся на экран</li>
+                    </ul>
+                </div>
+
+                <div class="task">
+                    <h3><i class="fas fa-check-circle"></i> Код</h3>
+                    <ul style="padding-left:20px;">
+                        <li>Код написан на Python 3, без синтаксических ошибок</li>
+                        <li>Использованы циклы, списки, строковые методы (явно видно применение)</li>
+                        <li>Присутствуют комментарии к основным блокам</li>
+                        <li>Названия переменных понятны (не <code>a1, b2</code>, а <code>word_count</code>, <code>char_count</code>)</li>
+                    </ul>
+                </div>
+
+                <div class="task">
+                    <h3><i class="fas fa-check-circle"></i> Оформление</h3>
+                    <ul style="padding-left:20px;">
+                        <li>Файл сохранён как <code>text_analyzer.py</code></li>
+                        <li>В начале файла указаны имя автора и краткое описание</li>
+                        <li>Программа работает одинаково при запуске в любой среде (Thonny, IDLE, терминал)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Навыки -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Какие навыки вы закрепите</h2>
+            <div class="section">
+                <div class="adv-grid">
+                    <div class="adv-item">
+                        <i class="fas fa-font"></i>
+                        <div class="adv-text">Строки и их методы</div>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-list-ul"></i>
+                        <div class="adv-text">Списки и перебор</div>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <div class="adv-text">Циклы и условия</div>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <div class="adv-text">Анализ данных</div>
+                    </div>
+                </div>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная цель:</strong> Научиться разбивать задачу на этапы, применять изученные конструкции Python для обработки реального текста и получать из него полезную информацию.
+                </div>
+            </div>
+        </div>
+
+        <!-- Сдача проекта -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Сдача проекта</h2>
+            <div class="homework-item">
+                <h3>Что нужно сдать</h3>
+                <p>Файл с программой <code>text_analyzer.py</code> и скриншот её работы для одного из текстов (можно выбрать любое стихотворение или отрывок). При желании можно добавить расширенные метрики на дополнительную оценку.</p>
+                <p><strong>Срок сдачи:</strong> следующее занятие.</p>
+                <p><strong>Формат сдачи:</strong> загрузить в общую папку или отправить преподавателю.</p>
+            </div>
+            <button class="botton" onclick="window.location.href='python_basics.html'">Перейти к следующему уроку</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Проект «Анализатор текста»</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```

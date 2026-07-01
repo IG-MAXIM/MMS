@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Возврат значения и области видимости переменных</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Возврат значения (return) и области видимости переменных</h1>
+            <p class="subtitle">Углубитесь в работу функций: возврат результатов, локальные и глобальные переменные</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Левая карточка: return -->
+            <div class="card">
+                <h2><i class="fas fa-redo-alt"></i> Оператор return</h2>
+                <div class="section">
+                    <p><code>return</code> завершает выполнение функции и возвращает указанное значение в место вызова. Если <code>return</code> не указан, функция возвращает <code>None</code>.</p>
+                    <div class="code-block">
+                        <span class="keyword">def</span> <span class="function">square</span>(x):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> x * x<br><br>
+                        result = square(5)<br>
+                        <span class="keyword">print</span>(result)  <span class="comment"># 25</span>
+                    </div>
+                    <p><strong>Можно возвращать несколько значений</strong> через запятую — они автоматически упаковываются в кортеж.</p>
+                    <div class="code-block">
+                        <span class="keyword">def</span> <span class="function">min_max</span>(a, b):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> (a, b) <span class="keyword">if</span> a < b <span class="keyword">else</span> (b, a)<br><br>
+                        mn, mx = min_max(7, 3)<br>
+                        <span class="keyword">print</span>(mn, mx)  <span class="comment"># 3 7</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая карточка: локальные и глобальные переменные -->
+            <div class="card">
+                <h2><i class="fas fa-globe"></i> Локальные и глобальные переменные</h2>
+                <div class="section">
+                    <p><strong>Локальные переменные</strong> создаются внутри функции и видны только в ней. <strong>Глобальные переменные</strong> объявлены на уровне модуля и доступны везде.</p>
+                    <div class="lang-compare">
+                        <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                            <h4><i class="fas fa-lock"></i> Локальная</h4>
+                            <div class="code-block" style="margin-top:10px;">
+                                <span class="keyword">def</span> <span class="function">func</span>():<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;x = 10<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(x)<br>
+                                func()   <span class="comment"># 10</span><br>
+                                <span class="keyword">print</span>(x) <span class="comment"># Ошибка!</span>
+                            </div>
+                        </div>
+                        <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                            <h4><i class="fas fa-unlock-alt"></i> Глобальная</h4>
+                            <div class="code-block" style="margin-top:10px;">
+                                counter = 0<br>
+                                <span class="keyword">def</span> <span class="function">increment</span>():<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">global</span> counter<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;counter += 1<br>
+                                increment()<br>
+                                <span class="keyword">print</span>(counter) <span class="comment"># 1</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Для изменения глобальной переменной внутри функции нужно объявить <code>global</code>. Без этого создастся локальная переменная с тем же именем.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практические задания -->
+        <div class="card">
+            <h2><i class="fas fa-tasks"></i> Практические задания</h2>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 1: Возврат значения</h3>
+                <p>Напишите функцию <code>cube(n)</code>, которая возвращает куб числа. Протестируйте её для нескольких значений.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task1', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task1" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">def</span> <span class="function">cube</span>(n):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> n ** 3<br><br>
+                    <span class="keyword">print</span>(cube(3))  <span class="comment"># 27</span><br>
+                    <span class="keyword">print</span>(cube(5))  <span class="comment"># 125</span>
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 2: Несколько возвращаемых значений</h3>
+                <p>Создайте функцию <code>sum_and_diff(a, b)</code>, которая возвращает сумму и разность чисел a и b. Присвойте результаты переменным и выведите их.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task2', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task2" class="code-block" style="display:none; margin-top:15px;">
+                    <span class="keyword">def</span> <span class="function">sum_and_diff</span>(a, b):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> a + b, a - b<br><br>
+                    s, d = sum_and_diff(10, 4)<br>
+                    <span class="keyword">print</span>(<span class="string">"Сумма:"</span>, s, <span class="string">"Разность:"</span>, d)
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 3: Глобальный счётчик</h3>
+                <p>Объявите глобальную переменную <code>call_count = 0</code>. Напишите функцию <code>track_call()</code>, которая увеличивает её на 1 при каждом вызове. Вызовите функцию 3 раза и выведите итоговое значение счётчика.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task3', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task3" class="code-block" style="display:none; margin-top:15px;">
+                    call_count = 0<br><br>
+                    <span class="keyword">def</span> <span class="function">track_call</span>():<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">global</span> call_count<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;call_count += 1<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">f"Вызов номер {call_count}"</span>)<br><br>
+                    track_call()<br>
+                    track_call()<br>
+                    track_call()<br>
+                    <span class="keyword">print</span>(<span class="string">"Всего вызовов:"</span>, call_count)  <span class="comment"># 3</span>
+                </div>
+            </div>
+
+            <div class="task">
+                <h3><i class="fas fa-pencil-alt"></i> Задание 4: Локальная vs глобальная</h3>
+                <p>Вне функции задайте переменную <code>value = 100</code>. Внутри функции <code>change_value()</code> попробуйте изменить её без <code>global</code>. Выведите <code>value</code> до и после вызова функции и объясните результат.</p>
+                <button class="btn-toggle" onclick="toggleSolution('task4', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать решение" data-hide-text="Скрыть решение"><i class="fas fa-eye"></i> <span>Показать решение</span></button>
+                <div id="task4" class="code-block" style="display:none; margin-top:15px;">
+                    value = 100<br><br>
+                    <span class="keyword">def</span> <span class="function">change_value</span>():<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;value = 200  <span class="comment"># Создаётся локальная переменная</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"Внутри функции:"</span>, value)<br><br>
+                    <span class="keyword">print</span>(<span class="string">"До вызова:"</span>, value)      <span class="comment"># 100</span><br>
+                    change_value()                               <span class="comment"># Внутри: 200</span><br>
+                    <span class="keyword">print</span>(<span class="string">"После вызова:"</span>, value)    <span class="comment"># 100 (глобальная не изменилась)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Итоги урока -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Итог урока</h2>
+            <div class="section">
+                <p>Теперь вы знаете:</p>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li>Как вернуть результат из функции с помощью <code>return</code></li>
+                    <li>Что функция без <code>return</code> возвращает <code>None</code></li>
+                    <li>Разницу между локальными и глобальными переменными</li>
+                    <li>Как изменять глобальные переменные внутри функции с помощью <code>global</code></li>
+                </ul>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная идея:</strong> Понимание областей видимости и возврата значений — ключ к написанию надёжных и предсказуемых программ. Чёткое разделение ответственности между функциями делает код модульным и тестируемым.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Домашнее задание</h2>
+            <div class="homework-item">
+                <h3>Задание 1</h3>
+                <p>Напишите функцию <code>div_mod(a, b)</code>, которая возвращает целую часть от деления и остаток (как <code>divmod</code>). Проверьте на примерах.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 2</h3>
+                <p>Создайте программу-калькулятор с глобальной переменной <code>last_result</code>, которая хранит последний результат вычислений. Функция <code>calculate(expr)</code> должна обновлять эту переменную.</p>
+            </div>
+            <div class="homework-item">
+                <h3>Задание 3</h3>
+                <p>Реализуйте функцию <code>count_words(text)</code>, которая возвращает количество слов в переданной строке. Используйте <code>split()</code>. Функция не должна зависеть от глобальных переменных (только локальные).</p>
+            </div>
+            <button class="botton" onclick="window.location.href='python_basics.html'">Перейти дальше</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Возврат значения (return) и области видимости переменных</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

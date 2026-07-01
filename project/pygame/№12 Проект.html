@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Проект «Нарисуй рисунок»</title>
+    <link rel="stylesheet" href="еще_раз.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">MMS</h2>
+            <i class="fas fa-align-justify toggle-btn"></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="../index.html"><i class="fas fa-home"></i><span class="link-name" style="--i:1;">Главная</span></a>
+            </li>
+            <li class="list-item active">
+                <a href="../coorses.html"><i class="fas fa-laptop"></i><span class="link-name" style="--i:2;">Курсы</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="fas fa-book"></i><span class="link-name" style="--i:3;">Содержание</span></a>
+            </li>
+            <li class="list-item">
+                <a href="#"><i class="far fa-user"></i><span class="link-name" style="--i:4;">Об авторе</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Проект «Нарисуй рисунок»</h1>
+            <p class="subtitle">Итоговый проект по теме "Циклы в Python": создайте консольную программу, которая рисует ASCII‑арт</p>
+        </header>
+
+        <!-- Постановка задачи -->
+        <div class="card">
+            <h2><i class="fas fa-book-open"></i> Постановка задачи</h2>
+            <div class="section">
+                <p>Вам предстоит разработать программу, которая с помощью циклов <strong>for</strong> и/или <strong>while</strong> рисует <strong>ASCII‑рисунок</strong> в консоли.</p>
+                
+                <div class="explanation">
+                    <h4>Что нужно сделать</h4>
+                    <p>Выберите один из предложенных вариантов (или придумайте свой) и напишите код, который строит рисунок из символов. Рисунок должен содержать повторяющиеся элементы или симметрию, для формирования которых обязательно используются циклы (в том числе вложенные). Программа должна запрашивать у пользователя размер (например, высоту) и выводить рисунок.</p>
+                </div>
+
+                <h3>Основные требования</h3>
+                <ul style="padding-left:20px; margin:15px 0;">
+                    <li>Использовать <strong>вложенные циклы</strong> (for внутри for или while внутри for/while)</li>
+                    <li>Применять <strong>range()</strong> для перебора строк и столбцов</li>
+                    <li>Разрешается использовать <strong>break / continue</strong> для изменения логики</li>
+                    <li>Код должен быть понятным, с комментариями к ключевым участкам</li>
+                    <li>Рисунок должен меняться в зависимости от введённого размера (не фиксированный)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Примеры рисунков (идеи) -->
+        <div class="card">
+            <h2><i class="fas fa-palette"></i> Идеи для рисунков</h2>
+            <div class="section">
+                <p>Вы можете выбрать один из следующих вариантов или предложить собственный:</p>
+                <div class="use-grid">
+                    <div class="use-card">
+                        <i class="fas fa-caret-up"></i>
+                        <strong>Треугольник</strong>
+                        <pre style="font-family:monospace; text-align:left; display:inline-block; color:#333;">
+*
+**
+***
+****
+*****
+                        </pre>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-caret-down"></i>
+                        <strong>Перевёрнутый треугольник</strong>
+                        <pre style="font-family:monospace; text-align:left; display:inline-block; color:#333;">
+*****
+****
+***
+**
+*
+                        </pre>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-gem"></i>
+                        <strong>Ромб</strong>
+                        <pre style="font-family:monospace; text-align:left; display:inline-block; color:#333;">
+  *
+ ***
+*****
+ ***
+  *
+                        </pre>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-tree"></i>
+                        <strong>Ёлочка</strong>
+                        <pre style="font-family:monospace; text-align:left; display:inline-block; color:#333;">
+  *
+ ***
+*****
+  |
+                        </pre>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-chess-board"></i>
+                        <strong>Шахматная доска</strong>
+                        <pre style="font-family:monospace; text-align:left; display:inline-block; color:#333;">
+# # # #
+ # # # #
+# # # #
+ # # # #
+                        </pre>
+                    </div>
+                    <div class="use-card">
+                        <i class="fas fa-border-all"></i>
+                        <strong>Рамка</strong>
+                        <pre style="font-family:monospace; text-align:left; display:inline-block; color:#333;">
+*****
+*   *
+*   *
+*****
+                        </pre>
+                    </div>
+                </div>
+                <p>Или придумайте свой уникальный рисунок: животное, дом, спираль, букву – всё, что можно составить из символов.</p>
+            </div>
+        </div>
+
+        <!-- Пример кода (одного из вариантов) -->
+        <div class="card">
+            <h2><i class="fas fa-code"></i> Пример реализации треугольника</h2>
+            <div class="section">
+                <p>Ниже приведён пример кода для рисования треугольника. Используйте его как основу или отправную точку.</p>
+                <button class="btn-toggle" onclick="toggleSolution('exampleCode', this)" data-show-icon="fa-eye" data-hide-icon="fa-eye-slash" data-show-text="Показать код" data-hide-text="Скрыть код"><i class="fas fa-eye"></i> <span>Показать код</span></button>
+                <div id="exampleCode" class="code-block" style="display:none; margin-top:15px;">
+                    h = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Введите высоту треугольника: "</span>))<br>
+                    <span class="keyword">for</span> i <span class="keyword">in</span> range(1, h + 1):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Печатаем i звёздочек</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> j <span class="keyword">in</span> range(i):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>(<span class="string">"*"</span>, end=<span class="string">""</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">print</span>()  <span class="comment"># Переход на новую строку</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Требования к реализации -->
+        <div class="card">
+            <h2><i class="fas fa-clipboard-list"></i> Требования к реализации</h2>
+            <div class="section">
+                <div class="lang-compare">
+                    <div class="lang-box" style="background: #eaf2ff; border-color: var(--accent);">
+                        <h4><i class="fas fa-code"></i> Технические требования</h4>
+                        <ul style="margin:0; padding-left:18px;">
+                            <li>Программа написана на Python 3</li>
+                            <li>Использован хотя бы один вложенный цикл</li>
+                            <li>Размер рисунка задаётся переменной или вводом пользователя</li>
+                            <li>Код не содержит «скопированных» строк без циклов (не должно быть повторяющихся print для увеличения размера)</li>
+                            <li>Допускается использование функций, но не обязательно</li>
+                        </ul>
+                    </div>
+                    <div class="lang-box" style="background: #f2f9ff; border-color: #3498db;">
+                        <h4><i class="fas fa-star"></i> Критерии качества</h4>
+                        <ul style="margin:0; padding-left:18px;">
+                            <li>Рисунок симметричен или логично повторяется</li>
+                            <li>Код структурирован и читаем</li>
+                            <li>Есть комментарии к ключевым циклам</li>
+                            <li>Программа не завершается ошибкой при любых корректных входных данных</li>
+                            <li>Названия переменных осмысленны</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Чеклист перед сдачей -->
+        <div class="card">
+            <h2><i class="fas fa-check-double"></i> Чеклист перед сдачей</h2>
+            <div class="section">
+                <p>Прежде чем отправить проект, убедитесь, что:</p>
+                
+                <div class="task">
+                    <h3><i class="fas fa-check-circle"></i> Работоспособность</h3>
+                    <ul style="padding-left:20px;">
+                        <li>Программа запускается и запрашивает размер</li>
+                        <li>Рисунок корректно отображается для разных размеров (например, 3, 5, 10)</li>
+                        <li>При вводе отрицательного или нулевого размера выводится сообщение об ошибке или программа завершается без аварий</li>
+                    </ul>
+                </div>
+
+                <div class="task">
+                    <h3><i class="fas fa-check-circle"></i> Код</h3>
+                    <ul style="padding-left:20px;">
+                        <li>Нет синтаксических ошибок</li>
+                        <li>Вложенные циклы используются правильно</li>
+                        <li>Циклы не бесконечные (если не предусмотрено логикой)</li>
+                        <li>Присутствуют комментарии</li>
+                    </ul>
+                </div>
+
+                <div class="task">
+                    <h3><i class="fas fa-check-circle"></i> Оформление</h3>
+                    <ul style="padding-left:20px;">
+                        <li>Код отформатирован (отступы одинаковы)</li>
+                        <li>Название файла соответствует заданию (например, <code>drawing.py</code>)</li>
+                        <li>В начале файла указан автор и краткое описание рисунка</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Итог / Навыки -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Какие навыки вы закрепите</h2>
+            <div class="section">
+                <div class="adv-grid">
+                    <div class="adv-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <div class="adv-text">Циклы for и while</div>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-layer-group"></i>
+                        <div class="adv-text">Вложенные циклы</div>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-list-ol"></i>
+                        <div class="adv-text">Функция range()</div>
+                    </div>
+                    <div class="adv-item">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <div class="adv-text">Логика построения фигур</div>
+                    </div>
+                </div>
+                <div class="key-point">
+                    <i class="fas fa-bullseye"></i>
+                    <strong>Главная цель:</strong> Научиться мыслить «циклами» и применять вложенные конструкции для решения геометрических задач в коде.
+                </div>
+            </div>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="homework">
+            <h2><i class="fas fa-book"></i> Сдача проекта</h2>
+            <div class="homework-item">
+                <h3>Что нужно сдать</h3>
+                <p>Файл с программой (<code>drawing.py</code>) и скриншот результата работы для одного из размеров. При желании можно добавить второй рисунок на дополнительную оценку.</p>
+                <p><strong>Срок сдачи:</strong> следующее занятие.</p>
+                <p><strong>Формат сдачи:</strong> загрузить в общую папку или отправить преподавателю.</p>
+            </div>
+            <button class="botton" onclick="window.location.href='python_basics.html'">Перейти к следующему уроку</button>
+        </div>
+
+        <footer>
+            <p>Курс Python для начинающих • Проект «Нарисуй рисунок»</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
